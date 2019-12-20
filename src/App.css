@@ -13,8 +13,28 @@
   }
 }
 
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  .App-header {
+    background-color: #ff0000; /* Red */
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 601px) and (max-width: 960px) {
+  .App-header {
+    background-color: #00ff00; /* Green */
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .App-header {
+    background-color: #282c34; /* Blue */
+  }
+}
+
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
