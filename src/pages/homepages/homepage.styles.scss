@@ -1,0 +1,31 @@
+.homepage {
+    background-color: #abdfe6;
+    padding-top: 70px;
+
+    .content-container {
+        width: 50%;
+        height: 100%;
+        padding: 100px;
+        background-color: red;
+
+        .text-container {
+            h1 {
+                font-family: "Lemonada";
+            }
+
+            h2 {
+                font-family: "Lemonada";
+                margin-top: -25px;
+            }
+
+            h3 {
+                font-family: 'Glacial Indifference Regular';
+                margin-top: -10px;
+            }
+        }
+
+        .button-container {
+            margin-top: 50px;
+        }
+    }
+}

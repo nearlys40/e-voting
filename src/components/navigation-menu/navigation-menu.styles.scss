@@ -1,11 +1,17 @@
 .navigation-menu {
-    width: auto;
-    height: 70px;
-    float: right;
-    background-color: #fff;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
-    li {
-        display: inline;
-        color: red;
+    .menu {
+      padding: 10px 30px;
+    }
+
+    .menu:hover {
+        color: blue;
+        font-size: 130%;
+        overflow: hidden;
     }
 }

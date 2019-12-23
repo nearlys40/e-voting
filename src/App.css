@@ -1,58 +1,34 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+  background-color: #abdfe6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Mobile Styles */
 @media only screen and (max-width: 600px) {
-  .App-header {
-    background-color: #ff0000; /* Red */
+  .app {
+    background-color: purple;
   }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 601px) and (max-width: 960px) {
-  .App-header {
-    background-color: #00ff00; /* Green */
+  .app {
+    background-color: blue;
   }
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
-  .App-header {
-    background-color: #282c34; /* Blue */
+  .app {
+    background-color: #abdfe6;
   }
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  font-family: 'Glacial Indifference Bold', Arial, sans-serif;
+  font-size: 21px;
+  text-decoration: none;
+  color: black;
 }
