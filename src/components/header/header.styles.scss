@@ -1,26 +1,22 @@
-.line{
-    width: 100%;
-    margin-top: 70px;
-    border-bottom: 2px solid black;
-    position: fixed;
-}
-
 .header {
     width: 100%;
     height: 70px;
+    top: 0;
     background-color: #abdfe6;
     position: fixed;
     display: flex;
     justify-content: flex-start;
 
-    .logo-container {
+    .ant-col.logo-container {
         height: 100%;
         width: auto;
-        padding: 0 30px;
+        align-items: center;
 
         .logo {
             height: 100%;
             width: 70px;
+            margin-left: 20px;
+            margin-right: 10px;
             pointer-events: none;
         }
     }
@@ -37,15 +33,13 @@
                 height: 50%;
                 font-family: 'Glacial Indifference Bold', Arial, sans-serif;
                 font-size: 36px;
-                align-items: center;
             }
         
             &.description {
                 height: 50%;
                 font-family: 'Glacial Indifference Regular', Arial, sans-serif;
                 font-size: 18px;
-                align-items: center;
-                margin-top: 20px;
+                margin-top: 8px;
             }
         }
     }

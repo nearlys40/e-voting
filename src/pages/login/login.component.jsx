@@ -1,10 +1,10 @@
 import React from 'react'
-import Footer from '../../components/footer/footer.component'
 import './login.styles.scss'
 
 const LoginPage = () => {
     return (
-        <div><div>LOGIN</div><Footer /></div>
+        <div className='login' id='login'>
+        </div>
     );
 }
 

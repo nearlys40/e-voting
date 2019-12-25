@@ -1,5 +1,4 @@
 .app {
-  background-color: #abdfe6;
   min-height: 100vh;
   height: 100%;
   display: flex;
@@ -23,7 +22,7 @@
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   .app {
-    background-color: #abdfe6;
+    background-color: white;
   }
 }
 

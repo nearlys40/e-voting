@@ -1,7 +1,7 @@
 import React from 'react'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import Footer from '../../components/footer/footer.component'
-import './homepage.styles.scss'
+import './home.styles.scss'
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -35,7 +35,7 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <div className='homepage'>
+            <div className='home' id='home'>
                 <div className='content-container'>
                     <div className='text-container'>
                         <h1>Highly Secured</h1>
@@ -51,7 +51,10 @@ class HomePage extends React.Component {
                         <CustomButton type='submit'>Learn More</CustomButton>
                     </div>
                 </div>
-                {this.state.scrollStatus === 'scroll stopped' && (<Footer />)}
+                {
+                    this.state.scrollStatus === 'scroll stopped' 
+                    && (<Footer />)
+                }
             </div>
         );
     }

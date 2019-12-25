@@ -1,12 +1,13 @@
-.homepage {
+.home {
     background-color: #abdfe6;
+    height: 100vh;
     padding-top: 70px;
 
     .content-container {
-        width: 50%;
+        width: 100%;
         height: 100%;
         padding: 100px;
-        background-color: red;
+        background: linear-gradient(to bottom right, white, #abdfe6);
 
         .text-container {
             h1 {

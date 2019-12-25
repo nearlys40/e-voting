@@ -33,7 +33,7 @@ class DrawerToggleButton extends React.Component {
 
   render() {
     return (
-      <Col className='toggle-button'>
+      <Col className='toggle-button' span={1}>
         <Button shape="rectangle" onClick={this.showDrawer}
           style={{
             height: '100%',
@@ -45,7 +45,7 @@ class DrawerToggleButton extends React.Component {
           <Icon type='menu' />
         </Button>
         <Drawer
-          width={"30%"}
+          width={"25%"}
           closable={false}
           onClose={this.onClose}
           visible={this.state.visible}
