@@ -10,45 +10,44 @@ import SignUpPage from './pages/sign-up/sign-up.component'
 import './App.css';
 
 class App extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      isLoginOrSignUpShowing: false,
-      homePath: 'home',
-      featuresPath: 'features',
-      aboutUsPath: 'about-us'
+      isLoginOrSignUpClicked: false
     }
   }
 
-  UNSAFE_componentWillMount() {
-    this.unlisten = this.props.history.listen((location, action) => {
-      console.log('You changed the page to: ')
-    });
+  showComponent = () => {
+    this.setState({
+      isLoginOrSignUpClicked: true
+    })
   }
 
-  UNSAFE_componentWillUnmount() {
-    this.unlisten();
+  hideComponent = () => {
+    this.setState({
+      isLoginOrSignUpClicked: false
+    })
   }
 
   render() {
     return (
       <div className='app'>
-        <Header />
-        {
-          !this.state.isLoginOrSignUpShowing ?
-          <HomePage /> : null
-        }
-        {
-          !this.state.isLoginOrSignUpShowing ?
-          <FeaturesPage /> : null
-        }
-        {
-          !this.state.isLoginOrSignUpShowing ?
-          <AboutUsPage /> : null
-        }
+        <Header
+          showComponent={this.showComponent}
+          hideComponent={this.hideComponent}
+        />
+
+        { this.state.isLoginOrSignUpClicked === true && (<HomePage />) }
+        { this.state.isLoginOrSignUpClicked === true && (<FeaturesPage />) }
+        { this.state.isLoginOrSignUpClicked === true && (<AboutUsPage />) }
+
         <Switch>
-          <Route exact path="/login"><LoginPage /></Route>
-          <Route exact path="/sign-up"><SignUpPage /></Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          <Route path="/sign-up">
+            <SignUpPage />
+          </Route>
         </Switch>
       </div>
     );

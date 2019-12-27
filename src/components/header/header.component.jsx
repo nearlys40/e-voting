@@ -1,27 +1,65 @@
 import React from 'react'
 import { Row, Col } from 'antd'
-import NavigationBar from '../navigation-bar/navigation-bar.component'
+import { Link, useHistory } from 'react-router-dom'
+import { Link as ScrollLink } from 'react-scroll'
 import DrawerToggleButton from '../drawer-toggle-button/drawer-toggle-button.component'
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import './header.styles.scss'
 
-class Header extends React.Component {
-  render() {
-    return (
-      <Row className='header'>
-        <Col className='logo-container'>
-          <Logo className='logo' />
-        </Col>
-        <Col className='title' span={9}>
-          <span className='e-voting'>e V O T I N G</span>
-          <span className='description'>distributed electronic voting platforms</span>
-        </Col>
-        <div className='spacer' />
-        <NavigationBar />
-        <DrawerToggleButton />
-      </Row>
-    );
-  }
+const Header = (props) => {
+  let history = useHistory()
+
+  return (
+    <Row className='header'>
+      <Col className='logo-container'>
+        <Logo className='logo' />
+      </Col>
+      <Col className='title' span={9}>
+        <span className='e-voting'>e V O T I N G</span>
+        <span className='description'>distributed electronic voting platforms</span>
+      </Col>
+      <div className='spacer' />
+      <Col className='navigation-menu' span={12}>
+        <ScrollLink id='scroll-to-home' className='menu' activeClass="active"
+          to='home' spy={true} smooth={true} offset={0} duration={500}
+          onClick={() => {
+            props.showComponent()
+            history.push('/')
+          }}>
+          HOME
+        </ScrollLink>
+        <ScrollLink id='scroll-to-features' className='menu' activeClass="active"
+          to='features' spy={true} smooth={true} offset={0} duration={500}
+          onClick={() => {
+            props.showComponent()
+            history.push('/')
+          }}>
+          FEATURES
+        </ScrollLink>
+        <ScrollLink id='scroll-to-about-us' className='menu' activeClass="active"
+          to='about-us' spy={true} smooth={true} offset={0} duration={500}
+          onClick={() => {
+            props.showComponent()
+            history.push('/')
+          }}>
+          ABOUT US
+        </ScrollLink>
+        <Link id='to-login-page' className='menu' to='/login'
+          onClick={() => {
+            props.hideComponent()
+          }}>
+          LOGIN
+        </Link>
+        <Link id='to-sign-up-page' className='menu' to='/sign-up'
+          onClick={() => {
+            props.hideComponent()
+          }}>
+          SIGN UP
+        </Link>
+      </Col>
+      <DrawerToggleButton />
+    </Row>
+  );
 }
 
 export default Header;

@@ -34,7 +34,7 @@ class DrawerToggleButton extends React.Component {
   render() {
     return (
       <Col className='toggle-button' span={1}>
-        <Button shape="rectangle" onClick={this.showDrawer}
+        <Button shape="round" onClick={this.showDrawer}
           style={{
             height: '100%',
             width: '75px',
