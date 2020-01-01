@@ -23,7 +23,7 @@ const Header = (props) => {
         <ScrollLink id='scroll-to-home' className='menu' activeClass="active"
           to='home' spy={true} smooth={true} offset={0} duration={500}
           onClick={() => {
-            props.showComponent()
+            props.componentClicked(true)
             history.push('/')
           }}>
           HOME
@@ -31,7 +31,7 @@ const Header = (props) => {
         <ScrollLink id='scroll-to-features' className='menu' activeClass="active"
           to='features' spy={true} smooth={true} offset={0} duration={500}
           onClick={() => {
-            props.showComponent()
+            props.componentClicked(true)
             history.push('/')
           }}>
           FEATURES
@@ -39,20 +39,20 @@ const Header = (props) => {
         <ScrollLink id='scroll-to-about-us' className='menu' activeClass="active"
           to='about-us' spy={true} smooth={true} offset={0} duration={500}
           onClick={() => {
-            props.showComponent()
+            props.componentClicked(true)
             history.push('/')
           }}>
           ABOUT US
         </ScrollLink>
         <Link id='to-login-page' className='menu' to='/login'
           onClick={() => {
-            props.hideComponent()
+            props.componentClicked(false)
           }}>
           LOGIN
         </Link>
         <Link id='to-sign-up-page' className='menu' to='/sign-up'
           onClick={() => {
-            props.hideComponent()
+            props.componentClicked(false)
           }}>
           SIGN UP
         </Link>

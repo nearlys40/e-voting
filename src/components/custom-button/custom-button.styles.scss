@@ -13,13 +13,18 @@
     &:first-child {
         background-color: #bd0606;
         color: white;
+        margin-right: 10px;
+    }
+
+    &:nth-child(2) {
+        background-color: #ffc014;
+        color: black;
     }
 
     &:last-child {
-        background-color: #ffc014;
-        color: black;
-        margin-left: 10px;
-    }
+      background-color: #5e76eb;
+      color: white;
+  }
 
     &:hover {
       background-color: white;

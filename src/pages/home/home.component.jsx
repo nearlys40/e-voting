@@ -47,12 +47,12 @@ class HomePage extends React.Component {
                         </h3>
                     </div>
                     <div className='button-container'>
-                        <CustomButton type='submit'>Get Started</CustomButton>
-                        <CustomButton type='submit'>Learn More</CustomButton>
+                        <CustomButton>Get Started</CustomButton>
+                        <CustomButton>Learn More</CustomButton>
                     </div>
                 </div>
                 {
-                    this.state.scrollStatus === 'scroll stopped' 
+                    this.state.scrollStatus === 'scroll stopped'
                     && (<Footer />)
                 }
             </div>

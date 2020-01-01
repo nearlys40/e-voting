@@ -13,19 +13,14 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isLoginOrSignUpClicked: false
+      isLoginOrSignUpClicked: true,
     }
+    this._timeout = null;
   }
 
-  showComponent = () => {
+  componentClicked = (value) => {
     this.setState({
-      isLoginOrSignUpClicked: true
-    })
-  }
-
-  hideComponent = () => {
-    this.setState({
-      isLoginOrSignUpClicked: false
+      isLoginOrSignUpClicked: value
     })
   }
 
@@ -33,14 +28,11 @@ class App extends React.Component {
     return (
       <div className='app'>
         <Header
-          showComponent={this.showComponent}
-          hideComponent={this.hideComponent}
+          componentClicked={this.componentClicked}
         />
-
-        { this.state.isLoginOrSignUpClicked === true && (<HomePage />) }
-        { this.state.isLoginOrSignUpClicked === true && (<FeaturesPage />) }
-        { this.state.isLoginOrSignUpClicked === true && (<AboutUsPage />) }
-
+        {this.state.isLoginOrSignUpClicked && <HomePage />}
+        {this.state.isLoginOrSignUpClicked && <FeaturesPage />}
+        {this.state.isLoginOrSignUpClicked && <AboutUsPage />}
         <Switch>
           <Route path="/login">
             <LoginPage />

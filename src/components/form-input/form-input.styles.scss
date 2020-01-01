@@ -1,0 +1,33 @@
+$sub-color: grey;
+$main-color: black;
+
+.group {
+  position: relative;
+  margin: 45px 0;
+
+  label {
+    font-family: 'Glacial Indifference Bold', Arial, sans-serif;
+  }
+
+  .form-input {
+    background: none;
+    background-color: white;
+    color: $sub-color;
+    font-size: 18px;
+    padding: 0px 10px 0px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border: 1px solid $sub-color;
+    margin: 5px 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input[type='password'] {
+    letter-spacing: 0.3em;
+  }
+}
