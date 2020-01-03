@@ -9,7 +9,7 @@
     .login-container {
         height: 50vh;
         min-width: 300px;
-        width: 30vw;
+        width: 35vw;
         display: flex;
         flex-direction: column;
 
@@ -27,6 +27,13 @@
                 width: 100%;
                 align-items: center;
                 text-align: center;
+
+                .custom-button {
+                    background-color: blue;
+                    color: white;
+                    border-radius: 5px;
+                    margin: 0
+                }
             }
         }
     }

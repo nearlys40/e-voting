@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CampaignManager = () => {
+const CampaignManagerPage = () => {
     return (
         <div className='campaign-manager'>
             CAMPAIGN MANAGER
@@ -8,4 +8,4 @@ const CampaignManager = () => {
     );
 }
 
-export default CampaignManager;
+export default CampaignManagerPage;

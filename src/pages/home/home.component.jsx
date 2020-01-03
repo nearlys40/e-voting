@@ -1,4 +1,6 @@
 import React from 'react'
+import FeaturesPage from '../features/features.component'
+import AboutUsPage from '../about-us/about-us.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import Footer from '../../components/footer/footer.component'
 import './home.styles.scss'
@@ -47,10 +49,12 @@ class HomePage extends React.Component {
                         </h3>
                     </div>
                     <div className='button-container'>
-                        <CustomButton>Get Started</CustomButton>
-                        <CustomButton>Learn More</CustomButton>
+                        <CustomButton className='get-started-button'>Get Started</CustomButton>
+                        <CustomButton className='learn-more-button'>Learn More</CustomButton>
                     </div>
                 </div>
+                <FeaturesPage />
+                <AboutUsPage />
                 {
                     this.state.scrollStatus === 'scroll stopped'
                     && (<Footer />)

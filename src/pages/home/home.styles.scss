@@ -28,6 +28,18 @@
         .button-container {
             width: auto;
             margin-top: 50px;
+
+            .custom-button {
+                &:nth-child(1) {
+                    background-color: #bd0606;
+                    color: white;
+                    margin-right: 10px;
+                }
+                &:nth-child(2) {
+                    background-color: #ffc014;
+                    color: black;
+                }
+            }
         }
     }
 }

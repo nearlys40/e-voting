@@ -57,6 +57,7 @@ class DrawerToggleButton extends React.Component {
             <Link className='menu' to='/about-us' style={{width: '100%'}}>ABOUT US</Link><br />
             <Link className='menu' to='/login' style={{width: '100%'}}>LOGIN</Link><br />
             <Link className='menu' to='/sign-up' style={{width: '100%'}}>SIGN UP</Link><br />
+            <Link className='menu' to='/all-campaigns' style={{width: '100%'}}>ALL CAMPAIGNS</Link><br />
           </div>
         </Drawer>
       </Col>

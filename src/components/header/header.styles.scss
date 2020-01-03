@@ -6,6 +6,7 @@
     position: fixed;
     display: flex;
     justify-content: flex-start;
+    z-index: 1;
 
     .ant-col.logo-container {
         height: 100%;
@@ -68,5 +69,13 @@
             color: blue;
             overflow: hidden;
         }
+    }
+
+    hr {
+        width: 100%;
+        border: 1px solid black;
+        position: absolute;
+        margin: 0;
+        margin-top: 70px;
     }
 }

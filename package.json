@@ -11,6 +11,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-is-scrolling": "^1.0.1",
+    "react-redux": "^7.1.3",
     "react-reveal": "^1.2.2",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
@@ -18,6 +19,8 @@
     "react-scroll": "^1.7.15",
     "react-scroll-parallax": "^2.2.0",
     "react-sticky-header": "^0.2.0",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
     "serialize-javascript": "^2.1.2"
   },
   "scripts": {

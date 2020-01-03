@@ -58,6 +58,7 @@ const Header = (props) => {
         </Link>
       </Col>
       <DrawerToggleButton />
+      <hr />
     </Row>
   );
 }
