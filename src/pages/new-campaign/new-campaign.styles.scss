@@ -1,0 +1,95 @@
+.create-new-campaign {
+    height: 100vh;
+    width: 100%;
+    padding-top: 70px;
+    background: linear-gradient(to bottom right, white, #abdfe6);
+    justify-content: center;
+
+    .new-campaign-header {
+        height: 40px;
+        width: auto;
+        padding: 0 20px;
+        margin: 20px 20px;
+        display: flex;
+        justify-content: center;
+        background-color: skyblue;
+        opacity: 0.8;
+
+        &:hover {
+            opacity: 100%;
+        }
+
+        .title {
+            color:brown;
+            font-family: 'Glacial Indifference Bold';
+            font-size: 20px;
+            align-self: center;
+            opacity: 100%;
+        }
+    }
+
+    .create-campaign-container {
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .form-container {
+            min-width: 200px;
+            width: 40%;
+            height: auto;
+            background-color: white;
+            padding: 20px 20px 10px 20px;
+            margin-top: 50px;
+            border-style: solid;
+
+            .steps-container {
+                width: auto;
+                height: auto;
+                padding: 20px 0;
+            }
+
+            .steps-button-container {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .campaign-info-container {
+                padding: 10px;
+                height: 300px;
+
+                .campaign-name-input {
+                    margin-top: 10px;
+                    width: 100%;
+                    border-style: groove;
+                }
+
+                .description-input {
+                    margin-top: 10px;
+                    width: 100%;
+                    border-style: groove;
+                }
+
+                .ant-upload.ant-upload-btn {
+                    height: 210px;
+                }
+
+                .ant-upload.ant-upload-drag {
+                    height: 210px;
+                }
+
+                .upload-campaign-poster-text {
+                    font-family: 'Glacial Indifference Bold';
+                    font-size: 16px;
+                    text-align: center;
+                }
+
+                .plan-container {
+                    height: 220px;
+                    background-color: turquoise;
+                    border-style: groove;
+                }
+            }
+        }
+    }
+}

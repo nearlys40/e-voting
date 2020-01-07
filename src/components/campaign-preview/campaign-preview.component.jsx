@@ -1,6 +1,5 @@
 import React from 'react'
-import { Row } from 'antd'
-import CreateNewCampaign from '../create-new-campaign/create-new-campaign.component'
+import { Row, Button } from 'antd'
 import DUMMY_DATA from '../../assets/dummy-data'
 import CampaignItem from '../campaign-item/campaign-item.component'
 import './campaign-preview.styles.scss'
@@ -20,7 +19,17 @@ class CampaignPreview extends React.Component {
         return (
             <div className='campaign-preview'>
                 <Row className='preview'>
-                    <CreateNewCampaign />
+                    <div className='create-new-campaign-container'>
+                        <div className='button-container'>
+                            <Button
+                                className='create-new-campaign-button'
+                                icon="plus-circle"
+                            />
+                        </div>
+                        <div className='text-container'>
+                            <span className='create-new-campaign-text'>Create New Campaign</span>
+                        </div>
+                    </div>
                     {
                         campaigns
                             .filter((campaign, index) => index < 4)

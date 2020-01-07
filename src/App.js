@@ -6,6 +6,7 @@ import HomePage from './pages/home/home.component'
 import LoginPage from './pages/login/login.component'
 import SignUpPage from './pages/sign-up/sign-up.component'
 import AllCampaignsPage from './pages/all-campaigns/all-campaigns.component'
+import NewCampaignPage from './pages/new-campaign/new-campaign.component'
 import './App.css';
 
 class App extends React.Component {
@@ -37,6 +38,7 @@ class App extends React.Component {
           <Route path="/login" component={LoginPage} />
           <Route path="/sign-up" component={SignUpPage} />
           <Route path="/all-campaigns" component={AllCampaignsPage} />
+          <Route path='/create-new-campaign' component={NewCampaignPage} />
         </Switch>
       </div>
     );

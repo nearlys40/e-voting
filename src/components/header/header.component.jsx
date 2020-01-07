@@ -3,7 +3,7 @@ import { Row, Col } from 'antd'
 import { Link, useHistory } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
 import DrawerToggleButton from '../drawer-toggle-button/drawer-toggle-button.component'
-import { ReactComponent as Logo } from '../../assets/crown.svg'
+import { ReactComponent as Logo } from '../../assets/generated.svg'
 import './header.styles.scss'
 
 const Header = (props) => {
@@ -11,13 +11,13 @@ const Header = (props) => {
 
   return (
     <Row className='header'>
-      <Col className='logo-container'>
+      <Col className='logo-container' span={12}>
         <Logo className='logo' />
       </Col>
-      <Col className='title' span={9}>
+      {/* <Col className='title' span={9}>
         <span className='e-voting'>e V O T I N G</span>
         <span className='description'>distributed electronic voting platforms</span>
-      </Col>
+      </Col> */}
       <div className='spacer' />
       <Col className='navigation-menu' span={12}>
         <ScrollLink id='scroll-to-home' className='menu' activeClass="active"
