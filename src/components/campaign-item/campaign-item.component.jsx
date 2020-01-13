@@ -1,10 +1,11 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import { Button, Row, Col } from 'antd'
 import CustomButton from '../custom-button/custom-button.component'
 import './campaign-item.styles.scss'
 
-const CampaignItem = (item) => {
-    const { name, createdOn, imageUrl } = item
+const CampaignItem = ({ name, createdOn, imageUrl, history }) => {
+
     return (
         <Col className='campaign-item'>
             <Row className='campaign-item-header'>
@@ -20,11 +21,18 @@ const CampaignItem = (item) => {
             <div className='poster-container'>
                 <img className='poster-image' src={`${imageUrl}`} alt='poster' />
                 <div className='button-container'>
-                    <CustomButton onClick={() => alert(`Visit ${name}`)}>Visit</CustomButton>
+                    <CustomButton onClick={() => history.push({
+                        pathname: './campaign-management',
+                        state: {
+                            name: name,
+                            createdOn: createdOn,
+                            imageUrl: imageUrl,
+                        }
+                    })}>Visit</CustomButton>
                 </div>
             </div>
         </Col>
     )
 }
 
-export default CampaignItem
+export default withRouter(CampaignItem)
