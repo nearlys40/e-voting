@@ -49,8 +49,8 @@ class HomePage extends React.Component {
                         </h3>
                     </div>
                     <div className='button-container'>
-                        <CustomButton className='get-started-button'>Get Started</CustomButton>
-                        <CustomButton className='learn-more-button'>Learn More</CustomButton>
+                        <CustomButton>Get Started</CustomButton>
+                        <CustomButton>Learn More</CustomButton>
                     </div>
                 </div>
                 <FeaturesPage />

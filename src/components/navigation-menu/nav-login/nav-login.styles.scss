@@ -1,0 +1,48 @@
+.navigation-menu {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    .login-container {
+        padding-right: 20px;
+
+        .profile-container {
+            font-family: 'Glacial Indifference Bold', Arial, sans-serif;
+            font-size: 16px;
+
+            .welcome-text {
+                padding: 6px;
+            }
+
+            .user-info {
+                color: blue;
+                padding: 6px;
+                cursor: pointer;
+            }
+            .user-picture {
+                padding: 10px;
+                margin-left: 10px;
+                background-color: grey;
+                cursor: pointer;
+            }
+        }
+
+        .logout-container {
+            padding: 5px 0px 5px 5px;
+            display: flex;
+            justify-content: flex-end;
+
+            .logout-button {
+                cursor: pointer;
+                font-family: 'Glacial Indifference Bold', Arial, sans-serif;
+                font-size: 16px;
+
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+    }
+}

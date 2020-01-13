@@ -46,7 +46,7 @@ class LoginPage extends React.Component {
                                 required
                             />
                             <div className='custom-button-container'>
-                                <CustomButton className='login-button' type='submit'>Login</CustomButton>
+                                <CustomButton type='submit'>Login</CustomButton>
                             </div>
                         </form>
                     </div>

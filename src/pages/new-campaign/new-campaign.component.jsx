@@ -26,8 +26,9 @@ class NewCampaignPage extends React.Component {
     }
 
     done() {
-        //condition -> async
-        this.props.history.push('/all-campaigns')
+        setTimeout(() => {
+            this.props.history.push('/all-campaigns')
+        }, 2000);
     }
 
     render() {

@@ -1,0 +1,21 @@
+.navigation-menu {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    a {
+      color: black;
+      opacity: 0.7;
+    }
+
+    .menu {
+      padding: 10px 26px;
+    }
+
+    .menu:hover {
+        color: blue;
+        overflow: hidden;
+    }
+}

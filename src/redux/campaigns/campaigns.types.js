@@ -1,0 +1,4 @@
+export const CampaignActionTypes = {
+    CREATE_NEW_CAMPAIGN: 'CREATE_NEW_CAMPAIGN',
+    DELETE_CAMPAIGN: 'DELETE_CAMPAIGN'
+}

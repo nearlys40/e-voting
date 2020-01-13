@@ -20,7 +20,7 @@ const CampaignItem = (item) => {
             <div className='poster-container'>
                 <img className='poster-image' src={`${imageUrl}`} alt='poster' />
                 <div className='button-container'>
-                    <CustomButton>Visit</CustomButton>
+                    <CustomButton onClick={() => alert(`Visit ${name}`)}>Visit</CustomButton>
                 </div>
             </div>
         </Col>
