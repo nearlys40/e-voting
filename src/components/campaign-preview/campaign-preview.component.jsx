@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Button } from 'antd'
-import DUMMY_DATA from '../../assets/dummy-data'
+import { withRouter } from 'react-router-dom'
+import CAMPAIGNS_MOCKUP_DATA from '../../assets/campaigns'
 import CampaignItem from '../campaign-item/campaign-item.component'
 import './campaign-preview.styles.scss'
 
@@ -9,8 +10,12 @@ class CampaignPreview extends React.Component {
         super(props)
 
         this.state = {
-            campaigns: DUMMY_DATA
+            campaigns: CAMPAIGNS_MOCKUP_DATA
         }
+    }
+
+    createNewCampaign = () => {
+        this.props.history.push('/new-campaign')
     }
 
     render() {
@@ -24,6 +29,7 @@ class CampaignPreview extends React.Component {
                             <Button
                                 className='create-new-campaign-button'
                                 icon="plus-circle"
+                                onClick={() => this.createNewCampaign()}
                             />
                         </div>
                         <div className='text-container'>
@@ -43,4 +49,4 @@ class CampaignPreview extends React.Component {
     }
 }
 
-export default CampaignPreview
+export default withRouter(CampaignPreview)

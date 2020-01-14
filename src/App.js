@@ -25,7 +25,7 @@ class App extends React.Component {
           <Route path="/login" component={LoginPage} />
           <Route path="/sign-up" component={SignUpPage} />
           <Route path="/all-campaigns" component={AllCampaignsPage} />
-          <Route path='/create-new-campaign' component={NewCampaignPage} />
+          <Route path='/new-campaign' component={NewCampaignPage} />
           <Route path='/campaign-management' component={CampaignManagementPage} />
         </Switch>
       </div>

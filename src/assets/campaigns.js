@@ -1,4 +1,4 @@
-const DUMMY_DATA = [
+const CAMPAIGNS_MOCKUP_DATA = [
     {
         id: 1,
         name: 'Election 1',
@@ -55,4 +55,4 @@ const DUMMY_DATA = [
     }
 ]
 
-export default DUMMY_DATA;
+export default CAMPAIGNS_MOCKUP_DATA;
