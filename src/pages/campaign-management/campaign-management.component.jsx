@@ -25,7 +25,7 @@ class CampaignManagementPage extends React.Component {
     }
 
     render() {
-        const { name, imageUrl } = this.props.history.location.state
+        const { name, createdOn, description, imageUrl, candidates, voters } = this.props.history.location.state
         const { SubMenu } = Menu
         const page = this.state.showPage
         let content
@@ -33,9 +33,9 @@ class CampaignManagementPage extends React.Component {
         if (page === '1') {
             content = <Campaign />
         } else if (page === '2') {
-            content = <Candidates />
+            content = <Candidates candidates={candidates} />
         } else if (page === '3') {
-            content = <Voters />
+            content = <Voters voters={voters} />
         }
 
         return (
@@ -57,7 +57,6 @@ class CampaignManagementPage extends React.Component {
                                 <span className='campaign-name'>{name}</span>
                             </div>
                         </div>
-                        <div className='spacer'></div>
                         <div className='campaign-menu'>
                             <Menu
                                 defaultSelectedKeys={['1']}

@@ -12,14 +12,14 @@ const USERS_MOCKUP_DATA = [
                 "name": "Campaign 1",
                 "createdOn": "12/12/2020",
                 "description": "Lorem ipsum dolor sit amet",
-                "imageUrl": "https://dummy-poster.com/poster",
+                "imageUrl": "https://i.ibb.co/X2VJP2W/blue-snapback.png",
                 "candidates": [
                     {
                         "id": "1",
                         "firstName": "Candidate 1",
                         "lastName": "CD 1",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com",
+                        "imageUrl": "https://i.ibb.co/ZYW3VTp/brown-brim.png",
                         "extras": []
                     },
                     {
@@ -27,7 +27,7 @@ const USERS_MOCKUP_DATA = [
                         "firstName": "Candidate 2",
                         "lastName": "CD 2",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com",
+                        "imageUrl": "https://i.ibb.co/ypkgK0X/blue-beanie.png",
                         "extras": []
                     },
                     {
@@ -35,7 +35,7 @@ const USERS_MOCKUP_DATA = [
                         "firstName": "Candidate 3",
                         "lastName": "CD 3",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com",
+                        "imageUrl": "https://i.ibb.co/QdJwgmp/brown-cowboy.png",
                         "extras": []
                     },
                     {
@@ -43,7 +43,7 @@ const USERS_MOCKUP_DATA = [
                         "firstName": "Candidate 4",
                         "lastName": "CD 4",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com",
+                        "imageUrl": "https://i.ibb.co/RjBLWxB/grey-brim.png",
                         "extras": []
                     }
                 ],
@@ -71,14 +71,14 @@ const USERS_MOCKUP_DATA = [
                 "name": "Campaign 2",
                 "createdOn": "12/12/2020",
                 "description": "Lorem ipsum dolor sit amet",
-                "imageUrl": "https://dummy-poster.com/poster",
+                "imageUrl": "https://i.ibb.co/YTjW3vF/green-beanie.png",
                 "candidates": [
                     {
                         "id": "1",
                         "firstName": "Candidate 1",
                         "lastName": "CD 1",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com",
+                        "imageUrl": "https://i.ibb.co/YTjW3vF/green-beanie.png",
                         "extras": []
                     },
                     {
@@ -86,7 +86,7 @@ const USERS_MOCKUP_DATA = [
                         "firstName": "Candidate 2",
                         "lastName": "CD 2",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com",
+                        "imageUrl": "https://i.ibb.co/rKBDvJX/palm-tree-cap.png",
                         "extras": []
                     },
                     {
@@ -94,7 +94,7 @@ const USERS_MOCKUP_DATA = [
                         "firstName": "Candidate 3",
                         "lastName": "CD 3",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com",
+                        "imageUrl": "https://i.ibb.co/bLB646Z/red-beanie.png",
                         "extras": []
                     },
                     {
@@ -102,7 +102,7 @@ const USERS_MOCKUP_DATA = [
                         "firstName": "Candidate 4",
                         "lastName": "CD 4",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com",
+                        "imageUrl": "https://i.ibb.co/1f2nWMM/wolf-cap.png",
                         "extras": []
                     }
                 ],
@@ -147,28 +147,28 @@ const USERS_MOCKUP_DATA = [
                         "firstName": "Candidate 1",
                         "lastName": "CD 1",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com"
+                        "imageUrl": "https://i.ibb.co/ZYW3VTp/brown-brim.png"
                     },
                     {
                         "id": "2",
                         "firstName": "Candidate 2",
                         "lastName": "CD 2",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com"
+                        "imageUrl": "https://i.ibb.co/ypkgK0X/blue-beanie.png"
                     },
                     {
                         "id": "3",
                         "firstName": "Candidate 3",
                         "lastName": "CD 3",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com"
+                        "imageUrl": "https://i.ibb.co/QdJwgmp/brown-cowboy.png"
                     },
                     {
                         "id": "4",
                         "firstName": "Candidate 4",
                         "lastName": "CD 4",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com"
+                        "imageUrl": "https://i.ibb.co/RjBLWxB/grey-brim.png"
                     }
                 ],
                 "voters": [
@@ -202,28 +202,28 @@ const USERS_MOCKUP_DATA = [
                         "firstName": "Candidate 1",
                         "lastName": "CD 1",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com"
+                        "imageUrl": "https://i.ibb.co/YTjW3vF/green-beanie.png"
                     },
                     {
                         "id": "2",
                         "firstName": "Candidate 2",
                         "lastName": "CD 2",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com"
+                        "imageUrl": "https://i.ibb.co/rKBDvJX/palm-tree-cap.png"
                     },
                     {
                         "id": "3",
                         "firstName": "Candidate 3",
                         "lastName": "CD 3",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com"
+                        "imageUrl": "https://i.ibb.co/bLB646Z/red-beanie.png"
                     },
                     {
                         "id": "4",
                         "firstName": "Candidate 4",
                         "lastName": "CD 4",
                         "description": "Excepteur sint occaecat cupidatat non proident",
-                        "imageUrl": "https://dummy-candidate-profile.com"
+                        "imageUrl": "https://i.ibb.co/1f2nWMM/wolf-cap.png"
                     }
                 ],
                 "voters": [

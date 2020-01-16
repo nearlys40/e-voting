@@ -5,7 +5,13 @@ import './drawer-toggle-button.styles.scss'
 import { Drawer, Button, Icon } from 'antd'
 
 class DrawerToggleButton extends React.Component {
-  state = { visible: false, childrenDrawer: false };
+  constructor(props) {
+    super(props)
+    this.state = {
+      visible: false,
+      childrenDrawer: false
+    };
+  }
 
   showDrawer = () => {
     this.setState({
@@ -38,8 +44,7 @@ class DrawerToggleButton extends React.Component {
           style={{
             height: '100%',
             width: '75px',
-            background: 'transparent',
-            border: 'none'
+            background: 'transparent'
           }}
         >
           <Icon type='menu' />

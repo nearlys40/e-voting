@@ -1,10 +1,23 @@
 import React from 'react'
 import CampaignPreview from '../../components/campaign-preview/campaign-preview.component'
+import USERS_MOCKUP_DATA from '../../assets/users'
 import { Input } from 'antd'
 import './all-campaigns.styles.scss'
 
- const AllCampaignsPage = () => {
+class AllCampaignsPage extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            users: USERS_MOCKUP_DATA
+        }
+    }
+
+    render() {
         const { Search } = Input
+        const { users } = this.state
+        console.log(users)
+
         return (
             <div className='campaigns-container'>
                 <div className='page-indicator'>
@@ -19,9 +32,17 @@ import './all-campaigns.styles.scss'
                         enterButton
                     />
                 </div>
-                <CampaignPreview />
+                {
+                    users
+                        .filter((user) => user.id === "1")
+                        .map(({ id, campaigns, ...otherProps }) => (
+                            <CampaignPreview key={id} campaigns={campaigns} {...otherProps} />
+                        )
+                    )
+                }
             </div>
         );
     }
+}
 
 export default AllCampaignsPage

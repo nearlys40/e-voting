@@ -46,6 +46,7 @@
                 display: flex;
                 justify-content: center;
                 padding-top: 30px;
+                border-bottom-style: groove;
 
                 .image-container {
                     display: inline-block;
@@ -72,13 +73,6 @@
                         }
                     }
                 }
-            }
-
-            .spacer {
-                width: 100%;
-                min-width: 200px;
-                border: 1px solid black;
-                display: flex;
             }
 
             .campaign-menu {
@@ -114,8 +108,6 @@
             width: 80%;
             height: 550px;
             display: inline-block;
-            border-style: groove;
-            background-color: white;
             margin: 20px 10px 20px 0px;
         }
 

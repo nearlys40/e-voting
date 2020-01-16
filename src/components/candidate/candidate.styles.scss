@@ -1,0 +1,56 @@
+.candidate-container {
+    height: auto;
+    display: flex;
+    justify-content: initial;
+    margin: 20px 10px;
+
+    .profile-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .candidate-profile {
+            height: 80px;
+            width: 80px;
+            border-radius: 40px;
+            margin: 0px 10px;
+        }
+    }
+
+    .spacer {
+        flex: 1;
+    }
+
+    .data-container {
+        margin-left: 20px;
+        padding-top: 10px;
+
+        .name {
+            font-family: 'Glacial Indifference Bold', Arial, sans-serif;
+            color: blue;
+            font-size: 16px;
+        }
+
+        .description {
+            font-family: 'Glacial Indifference Regular', Arial, sans-serif;
+            color: grey;
+            font-size: 16px;
+        }
+    }
+
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .edit-button {
+            margin-right: 10px;
+        }
+
+        .delete-button {
+            background-color: red;
+            border-color: red;
+            margin-right: 10px;
+        }
+    }
+}
