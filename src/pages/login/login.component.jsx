@@ -1,6 +1,9 @@
 import React from 'react'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
+import { loginUser } from '../../redux/users/users.actions'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 import './login.styles.scss'
 
 class LoginPage extends React.Component {
@@ -8,23 +11,38 @@ class LoginPage extends React.Component {
         super(props)
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            errors: {}
         }
     }
 
     handleChange = event => {
         const { value, name } = event.target;
-        this.setState({[name]: value});
+        this.setState({[name]: value}); 
     }
 
     handleSubmit = event => {
         event.preventDefault();
-        this.setState({email: '', password: ''});
+        
+        const userData = {
+            username: this.state.username,
+            password: this.state.password
+        }
+
+        this.props.loginUser(userData)
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.user.isAuthenticated) {
+            this.props.history.push('/all-campaigns')
+        }
     }
 
     render() {
-        return (
-            <div className='login' id='login'>
+        const { errors } = this.state
+
+        return (   
+            <div className='login'>
                 <div className='login-container'>
                     <h1>WELCOME BACK, </h1>
                     <div className='form-container'>
@@ -35,6 +53,7 @@ class LoginPage extends React.Component {
                                 label='username'
                                 value={this.state.username}
                                 handleChange={this.handleChange}
+                                error={errors.username}
                                 required
                             />
                             <FormInput
@@ -43,6 +62,7 @@ class LoginPage extends React.Component {
                                 label='password'
                                 value={this.state.password}
                                 handleChange={this.handleChange}
+                                error={errors.password}
                                 required
                             />
                             <div className='custom-button-container'>
@@ -56,4 +76,12 @@ class LoginPage extends React.Component {
     }
 }
 
-export default LoginPage;
+const mapStateToProps = ({ user }) => ({
+    user,
+    errors: user.errors
+})
+
+export default connect(
+    mapStateToProps,
+    { loginUser }
+)(withRouter(LoginPage));

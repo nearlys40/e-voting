@@ -2,4 +2,37 @@
     background: linear-gradient(to bottom right, white, #abdfe6);
     height: 100vh;
     padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .sign-up-container {
+        height: auto;
+        min-width: 300px;
+        width: 35vw;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            text-align: center;
+            color: #00167d;
+        }
+
+        .form-container {
+            background-color: #f2f1e8;
+            padding: 0px 25px 20px 25px;
+            border-style: groove;
+
+            .custom-button-container {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+
+                .custom-button {
+                    color: white;
+                    background-color: blue;
+                }
+            }
+        }
+    }
 }

@@ -4,7 +4,8 @@ import { Button, Row, Col } from 'antd'
 import CustomButton from '../custom-button/custom-button.component'
 import './campaign-item.styles.scss'
 
-const CampaignItem = ({ id, name, createdOn, description, imageUrl, candidates, voters, history }) => {
+const CampaignItem = ({ id, history, ...otherProps }) => {
+    const { name, createdOn, description, imageUrl, candidates, voters } = otherProps
     return (
         <Col className='campaign-item'>
             <Row className='campaign-item-header'>
