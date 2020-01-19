@@ -22,7 +22,7 @@ const CampaignItem = ({ id, history, ...otherProps }) => {
                 <img className='poster-image' src={`${imageUrl}`} alt='poster' />
                 <div className='button-container'>
                     <CustomButton onClick={() => history.push({
-                        pathname: './campaign-management',
+                        pathname: '/campaign-management',
                         state: {
                             name: name,
                             createdOn: createdOn,

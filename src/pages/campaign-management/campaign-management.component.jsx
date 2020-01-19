@@ -25,7 +25,7 @@ class CampaignManagementPage extends React.Component {
     }
 
     render() {
-        const { name, createdOn, description, imageUrl, candidates, voters } = this.props.history.location.state
+        const { name, imageUrl, candidates, voters } = this.props.history.location.state
         const { SubMenu } = Menu
         const page = this.state.showPage
         let content

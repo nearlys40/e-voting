@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { userPostFetch } from '../../redux/users/users.actions'
 import { withRouter } from 'react-router-dom'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
@@ -18,21 +19,15 @@ class SignUpPage extends React.Component {
     }
 
     handleChange = event => {
-        const { value, name } = event.target;
+        const { name, value } = event.target;
         this.setState({ [name]: value });
     }
 
     handleSubmit = event => {
         event.preventDefault();
+        console.log(this.state)
 
-        const newUser = {
-            email: this.state.username,
-            username: this.state.username,
-            password: this.state.password,
-            password2: this.state.password2
-        }
-
-        console.log(newUser)
+        this.props.userPostFetch(this.state)
     }
 
     render() {
@@ -85,10 +80,11 @@ class SignUpPage extends React.Component {
     }
 }
 
-const mapStateToProps = ({ user }) => ({
-    user
+const mapDispatchToProps = dispatch => ({
+    userPostFetch: newUser => dispatch(userPostFetch(newUser))
 })
 
 export default connect(
-    mapStateToProps
+    null,
+    mapDispatchToProps
 )(withRouter(SignUpPage));

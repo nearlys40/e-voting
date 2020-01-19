@@ -1,7 +1,9 @@
 import { UserActionTypes } from './users.types'
+import { isEmpty } from 'is-empty'
 
 const INITIAL_STATE = {
-    currentUser: null,
+    user: null,
+    isAuthenticated: false
 }
 
 const userReducer = (state = INITIAL_STATE, action) => {
@@ -9,7 +11,13 @@ const userReducer = (state = INITIAL_STATE, action) => {
         case UserActionTypes.SET_CURRENT_USER:
             return {
                 ...state, 
-                currentUser: action.payload
+                isAuthenticated: !isEmpty(action.payload),
+                user: action.payload
+            }
+        case UserActionTypes.LOGIN_USER:
+            return {
+                ...state, 
+                user: action.payload
             }
         default:
             return state

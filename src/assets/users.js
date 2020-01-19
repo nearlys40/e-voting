@@ -2,9 +2,9 @@ const USERS_MOCKUP_DATA = [
     {
         "id": "1",
         "credentials": [],
-        "displayName": "Test",
         "email": "test@gmail.com",
         "username": "Test",
+        "password": "Password1",
         "extras": [],
         "campaigns": [
             {
@@ -130,9 +130,9 @@ const USERS_MOCKUP_DATA = [
     {
         "id": "2",
         "credentials": [],
-        "displayName": "Test 2",
         "email": "test2@gmail.com",
-        "username": "Test 2",
+        "username": "Test2",
+        "password": "Password2",
         "extras": [],
         "campaigns": [
             {

@@ -4,7 +4,7 @@ import userReducer from './users/users.reducer'
 import alertReducer from './alerts/alerts.reducer'
 
 export default combineReducers({
-    campaign: campaignReducer,
-    user: userReducer,
+    campaigns: campaignReducer,
+    users: userReducer,
     alert: alertReducer
 })

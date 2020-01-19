@@ -5,8 +5,6 @@ import CampaignItem from '../campaign-item/campaign-item.component'
 import './campaign-preview.styles.scss'
 
  const CampaignPreview = ({ campaigns, history, ...otherProps }) => {
-        console.log(campaigns)
-
         return (
             <div className='campaign-preview'>
                 <Row className='preview'>

@@ -1,5 +1,6 @@
 import React from 'react'
 import CampaignPreview from '../../components/campaign-preview/campaign-preview.component'
+import { withRouter } from 'react-router-dom'
 import USERS_MOCKUP_DATA from '../../assets/users'
 import { Input } from 'antd'
 import './all-campaigns.styles.scss'
@@ -16,7 +17,6 @@ class AllCampaignsPage extends React.Component {
     render() {
         const { Search } = Input
         const { users } = this.state
-        console.log(users)
 
         return (
             <div className='campaigns-container'>
@@ -33,9 +33,8 @@ class AllCampaignsPage extends React.Component {
                     />
                 </div>
                 {
-                    users
-                        .filter((user) => user.id === "1")
-                        .map(({ id, campaigns, ...otherProps }) => (
+                    users.filter(
+                        (user) => user.id === "1").map(({ id, campaigns, ...otherProps }) => (
                             <CampaignPreview key={id} campaigns={campaigns} {...otherProps} />
                         )
                     )
@@ -45,4 +44,4 @@ class AllCampaignsPage extends React.Component {
     }
 }
 
-export default AllCampaignsPage
+export default withRouter(AllCampaignsPage)
