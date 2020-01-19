@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { registerUser } from '../../redux/users/users.actions'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import './sign-up.styles.scss'
@@ -14,8 +13,7 @@ class SignUpPage extends React.Component {
             email: '',
             username: '',
             password: '',
-            password2: '',
-            errors: {}
+            password2: ''
         }
     }
 
@@ -34,20 +32,10 @@ class SignUpPage extends React.Component {
             password2: this.state.password2
         }
 
-        this.props.registerUser(newUser, this.props.history)
-    }
-
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.errors) {
-            this.setState({
-                errors: nextProps.errors
-            })
-        }
+        console.log(newUser)
     }
 
     render() {
-        const { errors } = this.state
-
         return (
             <div className='sign-up'>
                 <div className='sign-up-container'>
@@ -60,7 +48,6 @@ class SignUpPage extends React.Component {
                                 label='email'
                                 value={this.state.email}
                                 handleChange={this.handleChange}
-                                error={errors.email}
                                 required
                             />
                             <FormInput
@@ -69,7 +56,6 @@ class SignUpPage extends React.Component {
                                 label='username'
                                 value={this.state.username}
                                 handleChange={this.handleChange}
-                                error={errors.username}
                                 required
                             />
                             <FormInput
@@ -78,7 +64,6 @@ class SignUpPage extends React.Component {
                                 label='password'
                                 value={this.state.password}
                                 handleChange={this.handleChange}
-                                error={errors.password}
                                 required
                             />
                             <FormInput
@@ -87,7 +72,6 @@ class SignUpPage extends React.Component {
                                 label='confirm password'
                                 value={this.state.password2}
                                 handleChange={this.handleChange}
-                                error={errors.password2}
                                 required
                             />
                             <div className='custom-button-container'>
@@ -102,11 +86,9 @@ class SignUpPage extends React.Component {
 }
 
 const mapStateToProps = ({ user }) => ({
-    user,
-    errors: user.errors
+    user
 })
 
 export default connect(
-    mapStateToProps,
-    { registerUser }
+    mapStateToProps
 )(withRouter(SignUpPage));

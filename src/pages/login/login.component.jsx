@@ -1,7 +1,6 @@
 import React from 'react'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
-import { loginUser } from '../../redux/users/users.actions'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import './login.styles.scss'
@@ -77,11 +76,9 @@ class LoginPage extends React.Component {
 }
 
 const mapStateToProps = ({ user }) => ({
-    user,
-    errors: user.errors
+    user
 })
 
 export default connect(
-    mapStateToProps,
-    { loginUser }
+    mapStateToProps
 )(withRouter(LoginPage));
