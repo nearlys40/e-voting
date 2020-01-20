@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router'
 import { Switch, Route } from 'react-router-dom'
 import Header from './components/header/header.component'
 import HomePage from './pages/home/home.component'
@@ -33,4 +32,4 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App);
+export default App;

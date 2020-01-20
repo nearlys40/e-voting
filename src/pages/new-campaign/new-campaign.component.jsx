@@ -1,5 +1,4 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
 import { ReactComponent as TestLogo } from '../../assets/crown.svg'
 import { Steps, Button, message, Upload } from 'antd'
 import './new-campaign.styles.scss'
@@ -137,4 +136,4 @@ class NewCampaignPage extends React.Component {
     }
 }
 
-export default withRouter(NewCampaignPage)
+export default NewCampaignPage

@@ -1,5 +1,4 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
 import { Menu, Icon } from 'antd'
 import Campaign from './campaign/campaign.component'
 import Candidates from './users/candidates.component'
@@ -97,4 +96,4 @@ class CampaignManagementPage extends React.Component {
         );
     }
 }
-export default withRouter(CampaignManagementPage);
+export default CampaignManagementPage

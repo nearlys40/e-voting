@@ -1,6 +1,5 @@
 import React from 'react'
 import CampaignPreview from '../../components/campaign-preview/campaign-preview.component'
-import { withRouter } from 'react-router-dom'
 import USERS_MOCKUP_DATA from '../../assets/users'
 import { Input } from 'antd'
 import './all-campaigns.styles.scss'
@@ -44,4 +43,4 @@ class AllCampaignsPage extends React.Component {
     }
 }
 
-export default withRouter(AllCampaignsPage)
+export default AllCampaignsPage

@@ -1,9 +1,10 @@
 import React from 'react'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
-import { userLoginFetch } from '../../redux/users/users.actions'
+import { userLogin } from '../../redux/users/users.utils'
 import { connect } from 'react-redux'
 import './login.styles.scss'
+import { withRouter } from 'react-router'
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class LoginPage extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        this.props.userLoginFetch(this.state)
+        this.props.userLogin(this.state, this.props.history)
 
         this.setState({
             username: '',
@@ -63,11 +64,7 @@ class LoginPage extends React.Component {
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    userLoginFetch: user => dispatch(userLoginFetch(user))
-})
-
 export default connect(
     null,
-    mapDispatchToProps
-)(LoginPage);
+    { userLogin }
+)(withRouter(LoginPage));

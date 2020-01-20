@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { userPostFetch } from '../../redux/users/users.actions'
 import { withRouter } from 'react-router-dom'
+import { userSignUp } from '../../redux/users/users.utils'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import './sign-up.styles.scss'
@@ -14,7 +14,7 @@ class SignUpPage extends React.Component {
             email: '',
             username: '',
             password: '',
-            password2: ''
+            password2: '',
         }
     }
 
@@ -25,9 +25,13 @@ class SignUpPage extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state)
 
-        this.props.userPostFetch(this.state)
+        const { password, password2 } = this.state
+        if(password !== password2) {
+            alert("Password don't match!!")
+        } else {
+            this.props.userSignUp(this.state, )
+        }
     }
 
     render() {
@@ -80,11 +84,7 @@ class SignUpPage extends React.Component {
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    userPostFetch: newUser => dispatch(userPostFetch(newUser))
-})
-
 export default connect(
     null,
-    mapDispatchToProps
+    { userSignUp }
 )(withRouter(SignUpPage));
