@@ -141,7 +141,7 @@
           "name": "Campaign 1",
           "createdOn": "12/12/2020",
           "description": "Lorem ipsum dolor sit amet",
-          "imageUrl": "https://dummy-poster.com/poster",
+          "imageUrl": "https://i.ibb.co/RjBLWxB/grey-brim.png",
           "candidates": [
             {
               "id": "1",
@@ -196,7 +196,7 @@
           "name": "Campaign 2",
           "createdOn": "12/12/2020",
           "description": "Lorem ipsum dolor sit amet",
-          "imageUrl": "https://dummy-poster.com/poster",
+          "imageUrl": "https://i.ibb.co/rKBDvJX/palm-tree-cap.png",
           "candidates": [
             {
               "id": "1",
@@ -247,15 +247,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "M_N5VTq",
-      "credentials": [],
-      "email": "nearlysza@gmail.com",
-      "username": "nearlys40",
-      "password": "123456",
-      "extras": [],
-      "campaigns": []
     }
   ]
 }

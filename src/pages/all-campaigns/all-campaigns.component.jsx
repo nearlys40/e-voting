@@ -1,21 +1,28 @@
 import React from 'react'
 import CampaignPreview from '../../components/campaign-preview/campaign-preview.component'
-import USERS_MOCKUP_DATA from '../../assets/users'
+import { connect } from 'react-redux'
+import isEmpty from 'is-empty'
 import { Input } from 'antd'
 import './all-campaigns.styles.scss'
+
 
 class AllCampaignsPage extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            users: USERS_MOCKUP_DATA
+            user: []
         }
+    }
+
+    componentDidMount() {
+        this.setState({ 
+            user: this.props.user
+        })
     }
 
     render() {
         const { Search } = Input
-        const { users } = this.state
 
         return (
             <div className='campaigns-container'>
@@ -32,15 +39,19 @@ class AllCampaignsPage extends React.Component {
                     />
                 </div>
                 {
-                    users.filter(
-                        (user) => user.id === "1").map(({ id, campaigns, ...otherProps }) => (
-                            <CampaignPreview key={id} campaigns={campaigns} {...otherProps} />
-                        )
-                    )
+                   !isEmpty(this.state.user) &&
+                    (<CampaignPreview
+                        key={this.state.user.id}
+                        campaigns={this.state.user.campaigns}
+                    />)
                 }
             </div>
         );
     }
 }
 
-export default AllCampaignsPage
+const mapStateToProps = ({ users: { user }}) => ({
+    user
+})
+
+export default connect(mapStateToProps)(AllCampaignsPage)

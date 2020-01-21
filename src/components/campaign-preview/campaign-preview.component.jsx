@@ -4,32 +4,32 @@ import { withRouter } from 'react-router-dom'
 import CampaignItem from '../campaign-item/campaign-item.component'
 import './campaign-preview.styles.scss'
 
- const CampaignPreview = ({ campaigns, history, ...otherProps }) => {
-        return (
-            <div className='campaign-preview'>
-                <Row className='preview'>
-                    <div className='create-new-campaign-container'>
-                        <div className='button-container'>
-                            <Button
-                                className='create-new-campaign-button'
-                                onClick={() => history.push('/new-campaign')}
-                            />
-                        </div>
-                        <div className='text-container'>
-                            <span className='create-new-campaign-text'>Create New Campaign</span>
-                        </div>
+const CampaignPreview = ({ campaigns, history }) => {
+    return (
+        <div className='campaign-preview'>
+            <Row className='preview'>
+                <div className='create-new-campaign-container'>
+                    <div className='button-container'>
+                        <Button
+                            className='create-new-campaign-button'
+                            onClick={() => history.push('/new-campaign')}
+                        />
                     </div>
-                    {
-                        campaigns
-                            .filter((campaign, index) => index < 4)
-                            .map(({ id, ...otherProps }) => (
-                                <CampaignItem key={id} {...otherProps} />
-                            )
+                    <div className='text-container'>
+                        <span className='create-new-campaign-text'>Create New Campaign</span>
+                    </div>
+                </div>
+                {
+                    campaigns
+                        .filter((campaign, index) => index < 4)
+                        .map(({ id, ...otherProps }) => (
+                            <CampaignItem key={id} {...otherProps} />
                         )
-                    }
-                </Row>
-            </div>
-        )
-    }
+                    )
+                }
+            </Row>
+        </div>
+    )
+}
 
 export default withRouter(CampaignPreview)

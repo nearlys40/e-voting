@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { userSignUp } from '../../redux/users/users.utils'
+import { userSignUpFetch } from '../../redux/users/users.utils'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import './sign-up.styles.scss'
@@ -30,7 +30,7 @@ class SignUpPage extends React.Component {
         if(password !== password2) {
             alert("Password don't match!!")
         } else {
-            this.props.userSignUp(this.state, )
+            this.props.userSignUpFetch(this.state, this.props.history)
         }
     }
 
@@ -86,5 +86,5 @@ class SignUpPage extends React.Component {
 
 export default connect(
     null,
-    { userSignUp }
+    { userSignUpFetch }
 )(withRouter(SignUpPage));

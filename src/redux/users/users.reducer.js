@@ -1,5 +1,5 @@
 import { UserActionTypes } from './users.types'
-import { isEmpty } from 'is-empty'
+import isEmpty from 'is-empty'
 
 const INITIAL_STATE = {
     user: null,
@@ -17,6 +17,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
         case UserActionTypes.LOGIN_USER:
             return {
                 ...state, 
+                isAuthenticated: !isEmpty(action.payload),
                 user: action.payload
             }
         default:
