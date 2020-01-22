@@ -1,0 +1,62 @@
+@import url("https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css");
+
+h1,h2,h3,h4,a {
+    font-family: "Glacial Indifference Bold";
+}
+p {
+    font-family: "Glacial Indifference Regular";
+}
+
+.login {
+    background: linear-gradient(to bottom right, white, #abdfe6);
+    height: 100vh;
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    height: 50vh;
+    min-width: 300px;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.segment-inner{
+    background: #e8eded !important;
+
+}
+
+.formfield-style{
+    margin-top: 6% !important;
+    padding-left: 7%;
+    padding-right: 7%; 
+}
+.text-label{
+    text-align: left;
+    margin: 2%;
+}
+.submit-button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.submit-button{
+    margin-top: 7%;
+    margin-bottom: 2%;
+    width: 50% !important;
+}
+
+.link{
+    color:red;
+    font-size: 15px;
+}
+
+.register-button{
+    margin-top: 4% !important;
+    margin-bottom: 3%;
+    width: 50% !important;
+}

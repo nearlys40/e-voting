@@ -5,6 +5,8 @@ import { userSignUpFetch } from '../../redux/users/users.utils'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import './sign-up.styles.scss'
+import '../login/login-new.styles.scss'
+import { Button, Form, Grid, Header, Image, Message, Segment, Icon } from 'semantic-ui-react'
 
 class SignUpPage extends React.Component {
     constructor(props) {
@@ -38,7 +40,82 @@ class SignUpPage extends React.Component {
         return (
             <div className='sign-up'>
                 <div className='sign-up-container'>
-                    <h1>SIGN UP FORM</h1>
+                <Grid textAlign='center' style={{ height: '100vh' }} >
+                        <Grid.Column >
+                            <h1 style={{ color: '#085b96' }}>REGISTER NEW USER</h1>
+                            <Segment>
+                                <Form size='large' onSubmit={this.handleSubmit} >
+                                    <Segment stacked className='segment-inner'>
+                                        <Form.Field className='formfield-style'>
+                                            <label className='text-label'><h4>EMAIL</h4></label>
+                                            <Form.Input
+                                                fluid icon='mail outline'
+                                                iconPosition='left'
+                                                placeholder='email'
+                                                value={this.state.email}
+                                                name='email'
+                                                onChange={this.handleChange}
+                                                required />
+                                        </Form.Field>
+
+                                        <Form.Field className='formfield-style'>
+                                            <label className='text-label'><h4>USERNAME</h4></label>
+                                            <Form.Input
+                                                fluid icon='user'
+                                                iconPosition='left'
+                                                placeholder='username'
+                                                value={this.state.username}
+                                                name='username'
+                                                onChange={this.handleChange}
+                                                required />
+                                        </Form.Field>
+
+                                        <Form.Field className='formfield-style'>
+                                            <label className='text-label'><h4>PASSWORD</h4></label>
+                                            <Form.Input
+                                                fluid
+                                                icon='lock'
+                                                iconPosition='left'
+                                                placeholder='Password'
+                                                type='password'
+                                                name='password'
+                                                value={this.state.password}
+                                                onChange={this.handleChange}
+                                                required
+                                            />
+                                        </Form.Field>
+
+                                        <Form.Field className='formfield-style'>
+                                            <label className='text-label'><h4>CONFIRM PASSWORD</h4></label>
+                                            <Form.Input
+                                                fluid
+                                                icon='lock'
+                                                iconPosition='left'
+                                                placeholder='Confirmed Password'
+                                                type='password'
+                                                name='password2'
+                                                value={this.state.password2}
+                                                onChange={this.handleChange}
+                                                required
+                                            />
+                                        </Form.Field>
+
+                                        <div className='submit-button-container'>
+                                            <Button color='orange' fluid size='large' className='register-button'>
+                                                Register
+                                            </Button>
+                                        </div>
+                                    </Segment>
+                                </Form>
+
+                                <Message attached='bottom' color='violet'>
+                                    <p>Already have an account?   <a href='#' style={{fontSize: '15px'}}>Login</a></p>
+                                </Message>
+                            </Segment>
+
+                        </Grid.Column>
+                    </Grid>
+                   {/* <h1>SIGN UP FORM</h1>
                     <div className='form-container'>
                         <form onSubmit={this.handleSubmit}>
                             <FormInput
@@ -77,7 +154,7 @@ class SignUpPage extends React.Component {
                                 <CustomButton type='submit'>Sign Up</CustomButton>
                             </div>
                         </form>
-                    </div>
+                   </div>*/}
                 </div>
             </div>
         )
