@@ -2,10 +2,10 @@ import React from 'react'
 import { Icon } from 'antd'
 import './nav-login.styles.scss'
 import { Col } from 'antd'
+import { connect } from 'react-redux'
+import { logoutUser } from '../../../redux/users/users.actions'
 
-const NavLogin = ({ id, ...otherProps }) => {
-    const { username } = otherProps
-
+const NavLogin = ({ id, username, logoutUser }) => {
     return (
         <Col className='navigation-menu' span={12}>
             <div className='login-container'>
@@ -15,11 +15,17 @@ const NavLogin = ({ id, ...otherProps }) => {
                     <Icon className='user-profile' type='user' />
                 </div>
                 <div className='logout-container'>
-                    <span className='logout-button'>LOGOUT</span>
+                    <span 
+                        className='logout-button'
+                        onClick={() => logoutUser()}
+                    >LOGOUT</span>
                 </div>
             </div>
         </Col>
     )
 }
 
-export default NavLogin
+export default connect(
+    null,
+    { logoutUser }
+)(NavLogin)

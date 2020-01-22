@@ -1,11 +1,10 @@
 import React from 'react'
-import FormInput from '../../components/form-input/form-input.component'
-import CustomButton from '../../components/custom-button/custom-button.component'
 import { userLoginFetch } from '../../redux/users/users.utils'
 import { connect } from 'react-redux'
 import './login-new.styles.scss'
 import { withRouter } from 'react-router'
-import { Button, Form, Grid, Header, Image, Message, Segment, Icon } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -79,10 +78,9 @@ class LoginPage extends React.Component {
                                 </Form>
 
                                 <Message attached='bottom' warning>
-                                    <p>Don't have account?   <a href='#' className='link'>Sign Up</a></p>
+                                    <p>Don't have account?   <Link to='/sign-up' className='link'>Sign Up</Link></p>
                                 </Message>
                             </Segment>
-
                         </Grid.Column>
                     </Grid>
                     {/*<h1>WELCOME BACK, </h1>

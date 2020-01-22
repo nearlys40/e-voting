@@ -9,3 +9,7 @@ export const loginUser = user => ({
     type: UserActionTypes.LOGIN_USER,
     payload: user
 })
+
+export const logoutUser = () => dispatch => {
+    dispatch(setCurrentUser({}))
+}

@@ -7,7 +7,7 @@ import NavLogin from '../../components/navigation-menu/nav-login/nav-login.compo
 import { ReactComponent as Logo } from '../../assets/generated.svg'
 import './header.styles.scss'
 
-const Header = ({ user, history }) => {
+const Header = ({ currentUser, isAuth, history }) => {
   return (
     <Row className='header'>
       <Col className='logo-container' span={12}>
@@ -15,10 +15,8 @@ const Header = ({ user, history }) => {
       </Col>
       <div className='spacer' />
         {
-          (user && user.length > 0) ?
-          user.map(
-            ({id, ...otherProps}) => (<NavLogin key={id} {...otherProps} />)
-          )
+          isAuth ?
+          <NavLogin key={currentUser.id} username={currentUser.username} />
           :
           <NavLogout />
         }
@@ -27,8 +25,9 @@ const Header = ({ user, history }) => {
   );
 }
 
-const mapStateToProps = ({ users: { user }}) => ({
-  user
+const mapStateToProps = ({ users }) => ({
+  currentUser: users.user,
+  isAuth: users.isAuthenticated
 })
 
 export default connect(

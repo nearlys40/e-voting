@@ -18,8 +18,7 @@ export const userSignUpFetch = (newUser, history) => dispatch => {
         if (res.status === 201) {
             history.push('/login')
         }
-    })
-        .catch(error => dispatch(alertError(error.message)))
+    }).catch(error => dispatch(alertError(error.message)))
 }
 
 export const userLoginFetch = (user, history) => dispatch => {
@@ -37,6 +36,5 @@ export const userLoginFetch = (user, history) => dispatch => {
                     }, 2000)
                 }
             }
-        })
-        .catch(error => dispatch(alertError(error.message)))
+        }).catch(error => dispatch(alertError(error.message)))
 }

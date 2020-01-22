@@ -1,12 +1,10 @@
 import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { Col } from 'antd'
 import { Link as ScrollLink } from 'react-scroll'
 import './nav-logout.styles.scss'
 
-const NavLogout = () => {
-    let history = useHistory()
-
+const NavLogout = ({ history }) => {
     return (
         <Col className='navigation-menu' span={12}>
             <ScrollLink id='scroll-to-home' className='menu' activeClass="active"
@@ -40,4 +38,4 @@ const NavLogout = () => {
     )
 }
 
-export default NavLogout
+export default withRouter(NavLogout)

@@ -6,11 +6,17 @@
     justify-content: flex-end;
 
     .login-container {
+        height: 100%;
         padding-right: 20px;
 
         .profile-container {
-            font-family: 'Glacial Indifference Bold', Arial, sans-serif;
-            font-size: 16px;
+            display: flex;
+            justify-content: flex-end;
+
+            span {
+                font-family: 'Glacial Indifference Bold', Arial, sans-serif;
+                font-size: 16px;
+            }
 
             .welcome-text {
                 padding: 6px;
@@ -36,12 +42,13 @@
             justify-content: flex-end;
 
             .logout-button {
+                margin-top: 5px;
                 cursor: pointer;
                 font-family: 'Glacial Indifference Bold', Arial, sans-serif;
                 font-size: 16px;
 
                 &:hover {
-                    color: black;
+                    color: blue;
                 }
             }
         }
