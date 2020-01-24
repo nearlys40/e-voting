@@ -1,10 +1,19 @@
 @import url("https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css");
+@import url("https://fonts.googleapis.com/css?family=Norican&display=swap");
+
+
 
 h1,h2,h3,h4,a {
     font-family: "Glacial Indifference Bold";
 }
 p {
     font-family: "Glacial Indifference Regular";
+}
+
+.title-text {
+    color: #085b96;
+    font-family: "Norican" !important;
+    font-size: 38px;
 }
 
 .login {

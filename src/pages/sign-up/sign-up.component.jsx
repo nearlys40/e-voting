@@ -40,7 +40,7 @@ class SignUpPage extends React.Component {
                 <div className='sign-up-container'>
                 <Grid textAlign='center' style={{ height: '100vh' }} >
                         <Grid.Column >
-                            <h1 style={{ color: '#085b96' }}>REGISTER NEW USER</h1>
+                            <h1 className='title-text'>- Register -</h1>
                             <Segment>
                                 <Form size='large' onSubmit={this.handleSubmit} >
                                     <Segment stacked className='segment-inner'>

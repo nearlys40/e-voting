@@ -1,3 +1,20 @@
+@import url("https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css");
+
+
+// .ui.search.results.message .header.xx {
+//     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+//     font-size: 1rem;
+//     font-weight: 700;
+//     color: rgba(0,0,0,.87);
+// }
+.title-text {
+    color: #085b96;
+    font-family: "Norican" !important;
+    font-size: 40px;
+    text-align: center;
+}
+
+
 .campaigns-container {
     background: linear-gradient(to bottom right, white, #abdfe6);
     min-height: 100vh;
@@ -34,7 +51,15 @@
         padding: 10px;
 
         .search {
-            width: 40%;
+            width: 100% !important;
         }
     }
 }
+
+
+.search-bar * {
+    width: 40vw;
+    .input{
+      width: 100%;
+    }
+  }

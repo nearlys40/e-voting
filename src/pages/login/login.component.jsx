@@ -39,7 +39,7 @@ class LoginPage extends React.Component {
                 <div className='login-container'>
                     <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
                         <Grid.Column style={{ maxWidth: 450 }}>
-                            <h1 style={{ color: '#085b96' }}>WELCOME BACK, </h1>
+                            <h1 className='title-text'>Welcome back, </h1>
                             <Segment>
                                 <Form size='large' onSubmit={this.handleSubmit} >
                                     <Segment stacked className='segment-inner'>
