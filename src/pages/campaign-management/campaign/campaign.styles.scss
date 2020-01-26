@@ -1,4 +1,136 @@
-.campaign {
+.campaign-dashboard {
     width: 100%;
     height: 100%;
+
+    .campaign-header {
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+
+        .campaign-text {
+            font-family: 'Glacial Indifference Bold', Arial, sans-serif;
+            font-size: 30px;
+            margin-left: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+
+    .data-container {
+        height: 490px;
+        display: flex;
+        justify-content: space-between;
+
+        .container-1 {
+            height: 480px;
+            width: 50%; 
+            display: inline-block;
+            background-color: white;
+            margin: 10px 5px 10px 0px;
+            border-style: ridge;
+
+            .container-1-1 {
+                width: 100%;
+                height: 50%;
+                padding: px;
+                border-style: ridge;
+
+                .container-1-1-1 {
+                    width: 50%;
+                    height: 100%;
+                    padding: 5px;
+                    border-style: ridge;
+                    display: inline-block;
+                }
+
+                .container-1-1-2 {
+                    width: 50%;
+                    height: 100%;
+                    padding: 5px;
+                    border-style: ridge;
+                    display: inline-block;
+                }
+            }
+
+            .container-1-2 {
+                width: 100%;
+                height: 50%;
+                padding: 10px;
+                border-style: ridge;
+            }
+        }
+    
+        .container-2 {
+            height: auto;
+            width: 50%; 
+            display: inline-block;
+            background-color: white;
+            margin: 10px 10px 10px 5px;
+            border-style: ridge;
+
+            .header-container {
+                width: 100%;
+                height: 30%;
+                padding: 20px;
+                background-color: yellowgreen;
+
+                .text-1 {
+                    font-family: "Glacial Indifference Bold";
+                    font-size: 24px;
+                    color: purple;
+                }
+
+                .text-2 {
+                    font-family: "Glacial Indifference Regular";
+                    font-size: 18px;
+                    color: grey;
+                    padding: 2px;
+                }
+            }
+
+            .data-section {
+                height: 70%;
+                width: 100%;
+                position: relative;
+
+                .piechart-container {
+                    height: auto;
+                    width: auto;
+                    display: inline-block;
+                    background-color: cadetblue;
+                }
+
+                .data-container {
+                    height: 100%;
+                    width: auto;
+                    display: inline-block;
+                    background-color: lightblue;
+
+                    .percentage {
+                        padding-top: 50px;
+                        width: 100%;
+                        float: right;
+
+                        .attendee {
+                            width: 100%;
+                            font-size: 30px;
+                        }
+
+                        .not-attend {
+                            width: 100%;
+                            font-size: 30px;
+                        }
+                    }
+
+                    .time-container {
+                        height: 100px;
+                        width: 100%;
+                        background-color: green;
+                    }
+                }
+            }
+        }
+    }
 }
