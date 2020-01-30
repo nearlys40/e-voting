@@ -1,6 +1,7 @@
 import React from 'react'
 import { ReactComponent as TestLogo } from '../../assets/crown.svg'
-import { Steps, Button, message, Upload } from 'antd'
+import { Steps, Button, message, Upload, Icon } from 'antd'
+import { Grid, Input,TextArea,Form } from 'semantic-ui-react'
 import './new-campaign.styles.scss'
 
 class NewCampaignPage extends React.Component {
@@ -56,13 +57,15 @@ class NewCampaignPage extends React.Component {
                 content: (
                     <div className='campaign-info-container'>
                         <span className='campaign-name-text'>
-                            Campaign Name
-                        </span><br />
-                        <input className='campaign-name-input' type='text' /><br /><br />
-                        <span className='description-text'>
-                            Description
-                        </span><br />
-                        <textarea className='description-input' rows='4' cols='50' />
+                            <h3 style={{color:'#1d56b3'}}>Campaign Name</h3>
+                        </span>
+                        <Input className='campaign-name-input' placeholder='enter campaign name ...' /><br /><br />
+                        <span className='campaign-name-text'>
+                        <h3 style={{color:'#1d56b3'}}>Description</h3>
+                        </span>
+                        <Form>
+                        <TextArea placeholder='enter campaign description...' className='description-input' rows={4} />
+                        </Form>
                     </div>
                 ),
             },
@@ -97,40 +100,50 @@ class NewCampaignPage extends React.Component {
 
         return (
             <div className='create-new-campaign'>
-                <div className='new-campaign-header'>
+                {/* <div className='new-campaign-header'>
                     <span className='title'>New Campaign</span>
-                </div>
-                <div className='create-campaign-container'>
-                    <div className='form-container'>
-                        <div className='steps-container'>
-                            <Steps current={current}>
-                                {steps.map(item => (
-                                    <Step key={item.title} title={item.title} />
-                                ))}
-                            </Steps>
-                        </div>
+                </div> */}
+                <Grid textAlign='center' style={{ height: '100vh' }} >
+                    <Grid.Column>
+                        <h1 className='title-text'>- New Campaign -</h1>
+                            <div className='create-campaign-container'>
+                                <div className='form-container'>
+                                    <div className='steps-container'>
+                                        <Steps current={current}>
+                                            {steps.map(item => (
+                                                <Step key={item.title} title={item.title} />
+                                            ))}
+                                        </Steps>
+                                    </div>
+                            
+                                    {steps[current].content}
+                          
 
-                        {steps[current].content}
-
-                        <div className="steps-button-container">
-                            {current > 0 && (
-                                <Button style={{ marginRight: 8 }} onClick={() => this.prev()}>
-                                    Previous
+                                    <div className="steps-button-container">
+                                        {current > 0 && (
+                                            <Button style={{ marginRight: 8 }} onClick={() => this.prev()}>
+                                                 <Icon type="left" />
+                                                Previous
+                                               
                                 </Button>
-                            )}
-                            {current < steps.length - 1 && (
-                                <Button type="primary" onClick={() => this.next()}>
-                                    Next
+                                        )}
+                                        {current < steps.length - 1 && (
+                                            <Button type="primary" onClick={() => this.next()}>
+                                                Next
+                                                <Icon type="right" />
                                 </Button>
-                            )}
-                            {current === steps.length - 1 && (
-                                <Button type="primary" onClick={() => this.done()}>
-                                    Done
+                                        )}
+                                        {current === steps.length - 1 && (
+                                            <Button type="primary" onClick={() => this.done()}>
+                                                Done
                                 </Button>
-                            )}
-                        </div>
-                    </div>
-                </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                       
+                    </Grid.Column>
+                </Grid>
             </div>
         )
     }

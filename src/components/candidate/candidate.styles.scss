@@ -8,6 +8,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    
 
         .candidate-profile {
             height: 80px;
@@ -53,4 +54,20 @@
             margin-right: 10px;
         }
     }
+}
+
+.collapse-bttn-grid{
+    display:flex !important;
+    justify-content:center!important;
+    .edit-bttn{
+        display: flex !important;
+        align-items: flex-end !important;
+        padding-bottom: 0 !important; 
+    }
+    .delete-bttn{
+        display: flex !important;
+        align-items: flex-start !important;
+        padding-top: 2px !important; 
+    }
+
 }

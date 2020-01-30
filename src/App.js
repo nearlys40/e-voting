@@ -13,7 +13,7 @@ import './App.css';
 const App = () => {
   return (
     <div className='app'>
-      <Header />
+      <Header/>
       <Switch>
         <Route
           exact path='/'

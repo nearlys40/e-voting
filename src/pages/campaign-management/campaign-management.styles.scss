@@ -1,6 +1,56 @@
 @import url("https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css");
 
 
+.side-menu-grid{
+    padding-left: 4% !important;
+    padding-right: 4%;
+    padding-top: 2%;
+    min-width:250px !important;
+    // margin-left: 4% !important;
+}
+
+.image-grid{
+    display:flex !important;
+    justify-content:flex-end !important;
+    align-items:flex-end !important;
+    min-width:65px !important;
+    min-height:65px !important;
+    padding-top:4%;
+    padding-left: 6%;
+    padding-bottom:4%;
+    padding-right:0 !important;
+    margin: 0 ;
+}
+
+.menu-grid{
+    width:100vw;
+    height:100vh;
+    margin-top:20px !important;
+    
+}
+
+.menu-container{
+    background-color:white !important;
+    border-radius:10 !important;
+    min-width:220px !important;
+    max-width:280px
+}
+
+.campaign-title-grid{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:flex-end;
+    padding-bottom:0 !important;
+}
+
+.campaign-name-grid{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:flex-start;
+    padding-top:1% !important;
+}
+
+
 .campaign-management-container {
     background: linear-gradient(to bottom right, white, #abdfe6);
     min-height: 100vh;
@@ -50,6 +100,9 @@
                 justify-content: center;
                 padding-top: 30px;
                 border-bottom-style: groove;
+               
+                
+                
 
                 .image-container {
                     display: inline-block;
@@ -58,7 +111,7 @@
                     .profile {
                         width: 60px;
                         height: 60px;
-                        border-radius: 50%;
+                        border-radius: 50% !important;
                         border: 1px solid black;
                     }
                 }
@@ -115,4 +168,49 @@
         }
 
     }
+}
+
+
+.profile {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    min-height: 70px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.text-container {
+    // display: inline-block;
+    display:block !important;
+    // justify-content: center !important;
+    // text-align: center !important;
+    align-items: center !important;
+    padding-top:5%;
+    margin-right:15% ;
+    line-height: 2pt;
+   
+
+    span {
+        font-family: 'Glacial Indifference Bold', Arial, sans-serif;
+
+        &.campaign-name {
+            font-size: 20px;
+            color: blue;
+            vertical-align: super !important;
+        }
+    }
+}
+
+.content-container2 {
+    width: 80%;
+    height: 550px;
+
+    margin: 20px 10px 20px 0px;
+    z-index: 100;
+    position: fixed;
+    top:0px;
+    left:0px;
+
+
 }

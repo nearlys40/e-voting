@@ -62,4 +62,28 @@
     .input{
       width: 100%;
     }
+    .div{
+        width: 100%;
+    }
   }
+
+.ui .search {
+    .results {
+        width: 100% !important;
+        .message{
+                .header{
+                    display: inline !important;
+                    position: relative !important;
+                    background: none;
+                }
+
+        }
+
+    }
+}
+
+
+.centered-searchbar{
+    display:flex !important;
+    justify-content:center !important;
+}

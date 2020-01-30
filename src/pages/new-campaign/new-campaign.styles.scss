@@ -1,7 +1,11 @@
+h1,h2,h3,h4,p{
+    font-family: 'Glacial Indifference Bold' !important;
+}
+
 .create-new-campaign {
     height: 100vh;
     width: 100%;
-    padding-top: 70px;
+    padding-top: 100px;
     background: linear-gradient(to bottom right, white, #abdfe6);
     justify-content: center;
 
@@ -33,20 +37,24 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        min-width: 420px !important;
 
         .form-container {
-            min-width: 200px;
+            min-width: 420px !important;
             width: 40%;
             height: auto;
             background-color: white;
-            padding: 20px 20px 10px 20px;
+            padding: 20px 30px 30px 30px;
             margin-top: 50px;
             border-style: solid;
+            border-radius: 20px;
+            border-color: #aeb9bf;
 
             .steps-container {
                 width: auto;
                 height: auto;
                 padding: 20px 0;
+                margin-right: 35px !important;
             }
 
             .steps-button-container {
@@ -61,13 +69,13 @@
                 .campaign-name-input {
                     margin-top: 10px;
                     width: 100%;
-                    border-style: groove;
+                   
                 }
 
                 .description-input {
                     margin-top: 10px;
                     width: 100%;
-                    border-style: groove;
+                    // border-style: groove;
                 }
 
                 .ant-upload.ant-upload-btn {
@@ -80,8 +88,9 @@
 
                 .upload-campaign-poster-text {
                     font-family: 'Glacial Indifference Bold';
-                    font-size: 16px;
+                    font-size: 18px;
                     text-align: center;
+                    color: #1d56b3;
                 }
 
                 .plan-container {
@@ -93,3 +102,13 @@
         }
     }
 }
+
+
+.campaign-name-text{
+    text-align: left;
+}
+
+// .ant-steps .ant-steps-horizontal .ant-steps-label-horizontal{
+//     display: flex;
+//     justify-content: center;
+// }
