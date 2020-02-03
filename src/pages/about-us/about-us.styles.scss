@@ -1,5 +1,28 @@
 .about-us {
-    background-color: red;
+    background: linear-gradient(to bottom right, white, #abdfe6);
     height: 100vh;
     padding-top: 70px;
+}
+
+.img-ele{
+    width: 50%;
+    height: 50%; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important; 
+}
+
+
+.grid-style{
+    padding: 5%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.text-block-tablet{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    text-align:center;
 }

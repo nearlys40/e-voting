@@ -1,13 +1,24 @@
+@import url("https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css");
+
+
+
 .home {
     background-color: #abdfe6;
     height: 100vh;
     padding-top: 70px;
 
     .content-container {
-        width: 100%;
+        width: 100vw;
         height: 100%;
-        padding: 100px;
+        // padding: 100px;
         background: linear-gradient(to bottom right, white, #abdfe6);
+        .center-grid{
+            display:flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            height:100% !important;
+            // padding-left:15% !important;
+        }
 
         .text-container {
             h1 {
@@ -42,4 +53,10 @@
             }
         }
     }
+}
+
+.centered-ele{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
 }

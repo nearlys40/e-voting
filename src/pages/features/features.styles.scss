@@ -1,5 +1,20 @@
+
 .features {
-    background-color: green;
-    height: 100vh;
+    background: linear-gradient(to bottom right, white, #abdfe6);
+    height: 100%;
     padding-top: 70px;
+    padding-bottom: 10%;
+}
+
+.centered-ele{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+}
+
+.feature-ele{
+    display:block;
+    text-align:center;
+    padding-left:5%;
+    padding-right:5%;
 }
