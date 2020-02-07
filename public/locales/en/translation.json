@@ -1,0 +1,17 @@
+{
+    "title": "Welcome to react using react-i18next",
+    "description": {
+        "part1": "To get started, edit src/App.js and save to reload.",
+        "part2": "Switch language between english and thai using buttons below."
+    },
+    "username": "Username",
+    "password": "Password",
+    "confirm-password": "Confirm Password",
+    "password-dont-match": "Password don't match!!!",
+    "welcome-back": "Welcome back,",
+    "login": "Login",
+    "dont-have-account": "Don't have account?",
+    "sign-up": "Sign Up",
+    "email": "Email",
+    "already-have-an-account": "Already have an account?"
+}

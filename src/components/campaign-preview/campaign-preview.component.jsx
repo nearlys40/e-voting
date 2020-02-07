@@ -1,34 +1,19 @@
-import React from 'react'
-import { Row, Button, Avatar, Card } from 'antd'
+import React, { Suspense } from 'react'
+import { Card } from 'antd'
 import { withRouter } from 'react-router-dom'
 import CampaignItem from '../campaign-item/campaign-item.component'
 import { Grid } from 'semantic-ui-react'
 import './campaign-preview.styles.scss'
+import { useTranslation } from 'react-i18next'
 const { Meta } = Card;
 
+const CpPreview = ({ campaigns, history }) => {
+    const { t, i18n } = useTranslation()
 
-
-const CampaignPreview = ({ campaigns, history }) => {
     return (
         <div className='campaign-preview'>
             <Grid columns={4} className='grid-style'>
                 <Grid.Row>
-                    {/* <Row className='preview'> */}
-
-                    {/* <Grid.Column width={4} style={{ minWidth: '250px' ,display:'flex',justifyContent:'center'}}>
-                <div className='create-new-campaign-container'>
-                    <div className='button-container'>
-                        <Button
-                            className='create-new-campaign-button'
-                            onClick={() => history.push('/new-campaign')}
-                        />
-                    </div>
-                    <div className='text-container'>
-                        <span className='create-new-campaign-text'>Create New Campaign</span>
-                    </div>
-                </div>
-                </Grid.Column> */}
-
                     {
                         campaigns
                             .filter((campaign, index) => index < 4)
@@ -39,11 +24,17 @@ const CampaignPreview = ({ campaigns, history }) => {
                             )
                             )
                     }
-
-                    {/* </Row> */}
                 </Grid.Row>
             </Grid>
         </div >
+    )
+}
+
+const CampaignPreview = ({ id, campaigns }) => {
+    return (
+        <Suspense fallback='loading'>
+            <CpPreview key={id} campaigns={campaigns} />
+        </Suspense>
     )
 }
 

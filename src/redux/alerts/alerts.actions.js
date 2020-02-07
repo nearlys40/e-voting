@@ -10,7 +10,6 @@ export const alertError = message => ({
     payload: message
 })
 
-export const alertClear = message => ({
-    type: AlertActionTypes.CLEAR,
-    payload: message
+export const alertClear = () => ({
+    type: AlertActionTypes.CLEAR
 })

@@ -1,21 +1,26 @@
 import { CampaignActionTypes } from './campaigns.types'
-import { createCampaign, deleteCampaign } from './campaigns.utils'
+import { setCurrentUser } from '../users/users.actions'
+import { getCampaignFetch, createCampaignFetch, editCampaignFetch, deleteCampaignFetch } from './campaigns.utils'
 
 const INITIAL_STATE = {
-    campaigns: []
+    campaign: null
 }
 
 const campaignReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case CampaignActionTypes.CREATE_NEW_CAMPAIGN:
-            return {
-                ...state,
-                campaigns: createCampaign(state.campaigns, action.payload)
-            }
+        case CampaignActionTypes.CREATE_CAMPAIGN:
+            return setCurrentUser(createCampaignFetch(action.payload))
         case CampaignActionTypes.DELETE_CAMPAIGN:
+            return setCurrentUser(deleteCampaignFetch(action.payload))
+        case CampaignActionTypes.GET_CAMPAIGN:
             return {
                 ...state,
-                campaigns: deleteCampaign(state.campaigns, action.payload)
+                campaign: getCampaignFetch(action.payload)
+            }
+        case CampaignActionTypes.EDIT_CAMPAIGN:
+            return {
+                ...state,
+                campaign: editCampaignFetch(state.campaigns, action.payload)
             }
         default:
             return state

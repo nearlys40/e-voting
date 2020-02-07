@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
+import { compose } from 'compose-react'
+import { withTranslation } from 'react-i18next'
 import { userSignUpFetch } from '../../redux/users/users.utils'
 import './sign-up.styles.scss'
 import '../login/login-new.styles.scss'
 import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
-import Slide from 'react-reveal/Slide'
 
-class SignUpPage extends React.Component {
+class SignUp extends React.Component {
     constructor(props) {
         super(props)
 
@@ -26,32 +27,33 @@ class SignUpPage extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-
         const { password, password2 } = this.state
+
         if(password !== password2) {
-            alert("Password don't match!!")
+            alert(this.props.t('password-dont-match'))
         } else {
             this.props.userSignUpFetch(this.state, this.props.history)
         }
     }
 
     render() {
+        const { t, i18n } = this.props
+
         return (
             <div className='sign-up'>
                 <div className='sign-up-container'>
-                <Grid textAlign='center' style={{ height: '100%' }} >
+                <Grid textAlign='center' style={{ height: '100vh' }} >
                         <Grid.Column >
-                            <h1 className='title-text'>- Register -</h1>
-                            <Slide top>
+                            <h1 className='title-text'>- {t('sign-up')} -</h1>
                             <Segment>
                                 <Form size='large' onSubmit={this.handleSubmit} >
                                     <Segment stacked className='segment-inner'>
                                         <Form.Field className='formfield-style'>
-                                            <label className='text-label'><h4>EMAIL</h4></label>
+                                            <label className='text-label'><h4>{t('email').toUpperCase()}</h4></label>
                                             <Form.Input
                                                 fluid icon='mail outline'
                                                 iconPosition='left'
-                                                placeholder='email'
+                                                placeholder={t('email')}
                                                 value={this.state.email}
                                                 name='email'
                                                 onChange={this.handleChange}
@@ -59,11 +61,11 @@ class SignUpPage extends React.Component {
                                         </Form.Field>
 
                                         <Form.Field className='formfield-style'>
-                                            <label className='text-label'><h4>USERNAME</h4></label>
+                                             <label className='text-label'><h4>{t('username').toUpperCase()}</h4></label>
                                             <Form.Input
                                                 fluid icon='user'
                                                 iconPosition='left'
-                                                placeholder='username'
+                                                placeholder={t('username')}
                                                 value={this.state.username}
                                                 name='username'
                                                 onChange={this.handleChange}
@@ -71,12 +73,12 @@ class SignUpPage extends React.Component {
                                         </Form.Field>
 
                                         <Form.Field className='formfield-style'>
-                                            <label className='text-label'><h4>PASSWORD</h4></label>
+                                            <label className='text-label'><h4>{t('password').toUpperCase()}</h4></label>
                                             <Form.Input
                                                 fluid
                                                 icon='lock'
                                                 iconPosition='left'
-                                                placeholder='Password'
+                                                placeholder={t('password')}
                                                 type='password'
                                                 name='password'
                                                 value={this.state.password}
@@ -86,82 +88,58 @@ class SignUpPage extends React.Component {
                                         </Form.Field>
 
                                         <Form.Field className='formfield-style'>
-                                            <label className='text-label'><h4>CONFIRM PASSWORD</h4></label>
+                                            <label className='text-label'><h4>{t('confirm-password').toUpperCase()}</h4></label>
                                             <Form.Input
                                                 fluid
                                                 icon='lock'
                                                 iconPosition='left'
-                                                placeholder='Confirmed Password'
+                                                placeholder={t('confirm-password')}
                                                 type='password'
                                                 name='password2'
                                                 value={this.state.password2}
                                                 onChange={this.handleChange}
                                                 required
                                             />
+                                            <label>{t('password-dont-match')}</label>
                                         </Form.Field>
 
                                         <div className='submit-button-container'>
                                             <Button color='orange' fluid size='large' className='register-button'>
-                                                Register
+                                                {t('sign-up')}
                                             </Button>
                                         </div>
                                     </Segment>
                                 </Form>
 
                                 <Message attached='bottom' color='violet'>
-                                    <p>Already have an account?   <Link to='/login' style={{fontSize: '15px'}}>Login</Link></p>
+                                    <p>{t('already-have-an-account')}   <Link to='/login' style={{fontSize: '15px'}}>{t('login')}</Link></p>
                                 </Message>
                             </Segment>
-                            </Slide>
+
                         </Grid.Column>
                     </Grid>
-                   {/* <h1>SIGN UP FORM</h1>
-                    <div className='form-container'>
-                        <form onSubmit={this.handleSubmit}>
-                            <FormInput
-                                name='email'
-                                type='email'
-                                label='email'
-                                value={this.state.email}
-                                handleChange={this.handleChange}
-                                required
-                            />
-                            <FormInput
-                                name='username'
-                                type='text'
-                                label='username'
-                                value={this.state.username}
-                                handleChange={this.handleChange}
-                                required
-                            />
-                            <FormInput
-                                name='password'
-                                type='password'
-                                label='password'
-                                value={this.state.password}
-                                handleChange={this.handleChange}
-                                required
-                            />
-                            <FormInput
-                                name='password2'
-                                type='password'
-                                label='confirm password'
-                                value={this.state.password2}
-                                handleChange={this.handleChange}
-                                required
-                            />
-                            <div className='custom-button-container'>
-                                <CustomButton type='submit'>Sign Up</CustomButton>
-                            </div>
-                        </form>
-                   </div>*/}
                 </div>
             </div>
         )
     }
 }
 
-export default connect(
-    null,
-    { userSignUpFetch }
-)(withRouter(SignUpPage));
+const mapDispatchToProps = dispatch => ({
+    userSignUpFetch: (user, history) => dispatch(userSignUpFetch(user, history))
+})
+
+const ComposeSignUp = compose(
+    withRouter,
+    connect(null, mapDispatchToProps),
+    withTranslation()
+)(SignUp)
+
+const SignUpPage = () => {
+    return (
+        <Suspense fallback='loading'>
+            <ComposeSignUp />
+        </Suspense>
+    )
+}
+
+export default SignUpPage

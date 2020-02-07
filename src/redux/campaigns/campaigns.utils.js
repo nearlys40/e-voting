@@ -1,9 +1,23 @@
-export const createCampaign = (campaigns, newCampaign) => {
-    return [...campaigns, ...newCampaign]
+export const getCampaignFetch = (campaignId) => {
+    return dispatch => {
+
+    }
 }
 
-export const deleteCampaign = (campaigns, deleteId) => {
-    return campaigns.filter(campaign => 
-        campaign.id !== deleteId
-    )
+export const createCampaignFetch = (campaign) => {
+    return dispatch => {
+        
+    }
+}
+
+export const editCampaignFetch = (campaignData) => {
+    return dispatch => {
+        
+    }
+}
+
+export const deleteCampaignFetch = (campaignId) => {
+    return dispatch => {
+        
+    }
 }

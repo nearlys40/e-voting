@@ -5,11 +5,20 @@ export const setCurrentUser = user => ({
     payload: user
 })
 
+export const updateProfile = user => ({
+    type: UserActionTypes.EDIT_USER_PROFILE,
+    payload: user
+})
+
 export const loginUser = user => ({
     type: UserActionTypes.LOGIN_USER,
     payload: user
 })
 
-export const logoutUser = () => dispatch => {
-    dispatch(setCurrentUser({}))
-}
+export const logoutUser = () => ({
+    type: UserActionTypes.LOGOUT_USER
+})
+
+export const setUserLoading = () => ({
+    type: UserActionTypes.USER_LOADING
+})

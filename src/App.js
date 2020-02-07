@@ -1,19 +1,20 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
-import PrivateRoute from './components/private-route.component'
+import PrivateRoute from './components/custom/private-route.component'
 import Header from './components/header/header.component'
 import HomePage from './pages/home/home.component'
 import LoginPage from './pages/login/login.component'
 import SignUpPage from './pages/sign-up/sign-up.component'
 import AllCampaignsPage from './pages/all-campaigns/all-campaigns.component'
 import NewCampaignPage from './pages/new-campaign/new-campaign.component'
+import EditProfilePage from './pages/edit-profile/edit-profile.component'
 import CampaignManagementPage from './pages/campaign-management/campaign-management.component'
 import './App.css';
 
 const App = () => {
   return (
     <div className='app'>
-      <Header/>
+      <Header />
       <Switch>
         <Route
           exact path='/'
@@ -38,6 +39,10 @@ const App = () => {
         <PrivateRoute
           path='/campaign-management'
           component={CampaignManagementPage}
+        />
+        <PrivateRoute
+          path='/edit-profile'
+          component={EditProfilePage}
         />
       </Switch>
     </div>

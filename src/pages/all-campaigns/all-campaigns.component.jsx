@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import CampaignPreview from '../../components/campaign-preview/campaign-preview.component'
 import { connect } from 'react-redux'
+import { compose } from 'compose-react'
 import { withRouter } from 'react-router-dom';
 import isEmpty from 'is-empty'
 // import { Input } from 'antd'
@@ -8,9 +9,10 @@ import CAMPAIGNS_MOCKUP_DATA from '../../assets/campaigns'
 import './all-campaigns.styles.scss'
 import { Grid, Search, Button, Icon, Responsive } from 'semantic-ui-react'
 import _ from 'lodash'
+import { withTranslation } from 'react-i18next';
 
 
-class AllCampaignsPage extends React.Component {
+class AllCampaigns extends React.Component {
     constructor(props) {
         super(props)
 
@@ -62,6 +64,7 @@ class AllCampaignsPage extends React.Component {
 
     render() {
         const { isLoading, value, results, dummyUser } = this.state
+        const { t, i18n } = this.props
         let formatedResultList = []
         results.map((result) => {
             formatedResultList.push({ 'title': result.name, 'description': result.description, 'image': result.imageUrl, 'id': result.id, 'createdOn': result.createdOn, 'candidates': result.candidates, 'voters': result.voters })
@@ -77,13 +80,6 @@ class AllCampaignsPage extends React.Component {
                 <h1 className='title-text'>- Campaigns -</h1>
                 <Grid>
                     <Grid.Row style={{ display: 'flex', justifyContent: 'center', width: '100vw', paddingTop: '2vh' }}>
-
-                        {/* <Search
-                                className='search'
-                                placeholder="Search Campaign..."
-                                onSearch={value => alert(value)}
-                                enterButton
-                            /> */}
                         <Grid.Column width={4}></Grid.Column>
                         <Grid.Column width={8} className='centered-searchbar'>
                             <Search
@@ -137,4 +133,18 @@ const mapStateToProps = ({ users: { user } }) => ({
     user
 })
 
-export default connect(mapStateToProps)(withRouter(AllCampaignsPage))
+const ComposeAllCampaigns = compose(
+    connect(mapStateToProps, null),
+    withRouter,
+    withTranslation()
+)(AllCampaigns)
+
+const AllCampaignsPage = () => {
+    return (
+        <Suspense fallback='loading'>
+            <ComposeAllCampaigns />
+        </Suspense>
+    )
+}
+
+export default AllCampaignsPage

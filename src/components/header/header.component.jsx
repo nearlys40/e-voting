@@ -25,6 +25,10 @@ const Header = ({ currentUser, isAuth, history }) => {
   );
 }
 
+// const mapStateToProps = state => ({
+//   currentUser: state.users.user
+// })
+
 const mapStateToProps = ({ users }) => ({
   currentUser: users.user,
   isAuth: users.isAuthenticated

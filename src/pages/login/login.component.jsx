@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { userLoginFetch } from '../../redux/users/users.utils'
 import { connect } from 'react-redux'
+import { compose } from 'compose-react'
 import './login-new.styles.scss'
 import { withRouter } from 'react-router'
+import { withTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
 
-class LoginPage extends React.Component {
+class Login extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -30,25 +32,24 @@ class LoginPage extends React.Component {
         })
     }
 
-
-
     render() {
+        const { t, i18n } = this.props
+
         return (
             <div className='login'>
-
                 <div className='login-container'>
                     <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
                         <Grid.Column style={{ maxWidth: 450 }}>
-                            <h1 className='title-text'>Welcome back, </h1>
+                            <h1 className='title-text'>{t('welcome-back')}</h1>
                             <Segment>
                                 <Form size='large' onSubmit={this.handleSubmit} >
                                     <Segment stacked className='segment-inner'>
                                         <Form.Field className='formfield-style'>
-                                            <label className='text-label'><h4>USERNAME</h4></label>
+                                            <label className='text-label'><h4>{t('username').toUpperCase()}</h4></label>
                                             <Form.Input
                                                 fluid icon='user'
                                                 iconPosition='left'
-                                                placeholder='username'
+                                                placeholder={t('username')}
                                                 value={this.state.username}
                                                 name='username'
                                                 onChange={this.handleChange}
@@ -56,12 +57,12 @@ class LoginPage extends React.Component {
                                         </Form.Field>
 
                                         <Form.Field className='formfield-style'>
-                                            <label className='text-label'><h4>PASSWORD</h4></label>
+                                            <label className='text-label'><h4>{t('password').toUpperCase()}</h4></label>
                                             <Form.Input
                                                 fluid
                                                 icon='lock'
                                                 iconPosition='left'
-                                                placeholder='Password'
+                                                placeholder={t('password')}
                                                 type='password'
                                                 name='password'
                                                 value={this.state.password}
@@ -71,49 +72,40 @@ class LoginPage extends React.Component {
                                         </Form.Field>
                                         <div className='submit-button-container'>
                                             <Button color='blue' fluid size='large' className='submit-button'>
-                                                Login
+                                                {t('login')}
                                             </Button>
                                         </div>
                                     </Segment>
                                 </Form>
 
                                 <Message attached='bottom' warning>
-                                    <p>Don't have account?   <Link to='/sign-up' className='link'>Sign Up</Link></p>
+                                    <p>{t('dont-have-account')}   <Link to='/sign-up' className='link'>{t('sign-up')}</Link></p>
                                 </Message>
                             </Segment>
                         </Grid.Column>
                     </Grid>
-                    {/*<h1>WELCOME BACK, </h1>
-                    <div className='form-container'>
-                        <form onSubmit={this.handleSubmit}>
-                            <FormInput
-                                name='username'
-                                type='text'
-                                label='username'
-                                value={this.state.username}
-                                handleChange={this.handleChange}
-                                required
-                            />
-                            <FormInput
-                                name='password'
-                                type='password'
-                                label='password'
-                                value={this.state.password}
-                                handleChange={this.handleChange}
-                                required
-                            />
-                            <div className='custom-button-container'>
-                                <CustomButton type='submit'>Login</CustomButton>
-                            </div>
-                    </form>
-                    </div>*/}
                 </div>
             </div>
         );
     }
 }
 
-export default connect(
-    null,
-    { userLoginFetch }
-)(withRouter(LoginPage));
+const mapDispatchToProps = dispatch => ({
+    userLoginFetch: (user, history) => dispatch(userLoginFetch(user, history))
+})
+
+const ComposeLogin = compose(
+    connect(null, mapDispatchToProps),
+    withRouter,
+    withTranslation()
+)(Login)
+
+const LoginPage = () => {
+    return (
+        <Suspense fallback='loading'>
+            <ComposeLogin />
+        </Suspense>
+    )
+}
+
+export default LoginPage
