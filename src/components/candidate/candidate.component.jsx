@@ -9,7 +9,15 @@ import './candidate.styles.scss'
 
 
 export default class Candidate extends React.Component {
-    state = {}
+    constructor(props) {
+        super(props);
+        this.state = { width: '', height: '' };
+    }
+
+    componentDidMount() {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
+    }
+
 
     handleOnUpdate = (e, { width }) => this.setState({ width })
 

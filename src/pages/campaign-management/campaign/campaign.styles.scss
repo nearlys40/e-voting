@@ -8,6 +8,7 @@
         justify-content: space-between;
         align-items: center;
         text-align: center;
+        width:100%;
 
         .campaign-text {
             font-family: 'Glacial Indifference Bold', Arial, sans-serif;
@@ -91,6 +92,7 @@
             }
 
             .data-section {
+                background-color: white;
                 height: 70%;
                 width: 100%;
                 position: relative;
@@ -133,4 +135,20 @@
             }
         }
     }
+}
+
+
+
+.data-section {
+    background-color: white;
+    height: 70%;
+    width: 100%;
+    position: relative;
+}
+
+.piechart-container {
+    height: auto;
+    width: auto;
+    display: inline-block;
+    background-color: cadetblue;
 }

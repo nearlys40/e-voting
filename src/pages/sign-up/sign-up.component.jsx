@@ -5,6 +5,7 @@ import { userSignUpFetch } from '../../redux/users/users.utils'
 import './sign-up.styles.scss'
 import '../login/login-new.styles.scss'
 import { Button, Form, Grid, Message, Segment } from 'semantic-ui-react'
+import Slide from 'react-reveal/Slide'
 
 class SignUpPage extends React.Component {
     constructor(props) {
@@ -38,9 +39,10 @@ class SignUpPage extends React.Component {
         return (
             <div className='sign-up'>
                 <div className='sign-up-container'>
-                <Grid textAlign='center' style={{ height: '100vh' }} >
+                <Grid textAlign='center' style={{ height: '100%' }} >
                         <Grid.Column >
                             <h1 className='title-text'>- Register -</h1>
+                            <Slide top>
                             <Segment>
                                 <Form size='large' onSubmit={this.handleSubmit} >
                                     <Segment stacked className='segment-inner'>
@@ -110,7 +112,7 @@ class SignUpPage extends React.Component {
                                     <p>Already have an account?   <Link to='/login' style={{fontSize: '15px'}}>Login</Link></p>
                                 </Message>
                             </Segment>
-
+                            </Slide>
                         </Grid.Column>
                     </Grid>
                    {/* <h1>SIGN UP FORM</h1>

@@ -19,7 +19,6 @@ class HomePage extends React.Component {
     componentDidMount() {
         window.addEventListener('scroll', (e) => this.handleScroll(e.target));
         this.setState({ width: window.innerWidth, height: window.innerHeight });
-        console.log(window.innerWidth, window.innerHeight, ' width, height')
     }
 
     handleScroll = (event) => {
