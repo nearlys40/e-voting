@@ -8,10 +8,15 @@
     "password": "Password",
     "confirm-password": "Confirm Password",
     "password-dont-match": "Password don't match!!!",
+    "welcome": "Welcome,",
     "welcome-back": "Welcome back,",
     "login": "Login",
+    "logout": "Logout",
     "dont-have-account": "Don't have account?",
     "sign-up": "Sign Up",
     "email": "Email",
-    "already-have-an-account": "Already have an account?"
+    "already-have-an-account": "Already have an account?",
+    "home": "Home",
+    "features": "Features",
+    "about-us": "About Us"
 }

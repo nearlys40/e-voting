@@ -8,10 +8,15 @@
     "password": "รหัสผ่าน",
     "confirm-password": "ยืนยันรหัสผ่าน",
     "password-dont-match": "รหัสผ่านไม่ตรงกัน!!!",
+    "welcome": "ยินดีต้อนรับ,",
     "welcome-back": "ยินดีต้อนรับกลับ,",
     "login": "เข้าสู่ระบบ",
+    "logout": "ออกจากระบบ",
     "dont-have-account": "ยังไม่มีบัญชีผู้ใช้งาน?",
     "sign-up": "สมัครสมาชิก",
     "email": "อีเมล์",
-    "already-have-an-account": "มีบัญชีผู้ใช้งานอยู่แล้ว?"
+    "already-have-an-account": "มีบัญชีผู้ใช้งานอยู่แล้ว?",
+    "home": "หน้าแรก",
+    "features": "ความสามารถ",
+    "about-us": "เกี่ยวกับเรา"
 }

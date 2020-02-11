@@ -7,10 +7,7 @@ import {
     Grid,
     Dropdown, Image, GridColumn, GridRow, Responsive
 } from "semantic-ui-react";
-
-
 import './campaign-management.styles.scss'
-
 
 class CampaignManagementPage extends React.Component {
     constructor(props) {
@@ -126,7 +123,7 @@ class CampaignManagementPage extends React.Component {
             content = <Candidates candidates={candidates} />
         } else if (page === '3') {
             content = <Voters voters={voters} />
-        }
+        }   
 
         return (
             <div className='campaign-management-container'>
