@@ -11,7 +11,6 @@ import { Grid, Search, Button, Icon, Responsive } from 'semantic-ui-react'
 import _ from 'lodash'
 import { withTranslation } from 'react-i18next';
 
-
 class AllCampaigns extends React.Component {
     constructor(props) {
         super(props)

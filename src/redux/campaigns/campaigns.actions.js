@@ -6,9 +6,9 @@ export const createCampaign = campaign => ({
     payload: campaign
 })
 
-export const deleteCampaign = campaignId => ({
+export const deleteCampaign = id => ({
     type: CampaignActionTypes.DELETE_CAMPAIGN,
-    payload: campaignId
+    payload: id
 }) 
 
 export const editCampaign = campaign => ({
@@ -16,7 +16,7 @@ export const editCampaign = campaign => ({
     payload: campaign
 })
 
-export const getCampaign = ids => ({
+export const getCampaign = id => ({
     type: CampaignActionTypes.GET_CAMPAIGN,
-    payload: ids
+    payload: id
 })
