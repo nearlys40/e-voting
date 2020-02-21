@@ -19,9 +19,12 @@ class AllCampaigns extends React.Component {
             isLoading: false,
             results: [],
             value: '',
-            user: CAMPAIGNS_MOCKUP_DATA,
-            dummyUser: CAMPAIGNS_MOCKUP_DATA[0]
+            user: null
         }
+    }
+
+    componentDidMount() {
+        this.setState({ user: this.props.currentUser }, () => console.log(this.state.user))
     }
 
     handleResultSelect = (e, { result }) => {
@@ -45,7 +48,7 @@ class AllCampaigns extends React.Component {
         this.setState({ isLoading: true, value })
 
         setTimeout(() => {
-            const source = this.state.dummyUser
+            const source = this.state.user
             if (this.state.value.length < 1) {
                 return this.setState({ isLoading: false, results: [], value: '' })
             }
@@ -55,15 +58,15 @@ class AllCampaigns extends React.Component {
 
             this.setState({
                 isLoading: false,
-                results: _.filter(this.state.dummyUser.campaigns, isMatch),
+                results: _.filter(this.state.user.campaigns, isMatch),
             })
-            console.log('dumm u', _.filter(this.state.dummyUser.campaigns, isMatch))
+            console.log('dumm u', _.filter(this.state.user.campaigns, isMatch))
         }, 300)
     }
 
     render() {
-        const { isLoading, value, results, dummyUser } = this.state
-        const { t, i18n } = this.props
+        const { isLoading, value, results, user } = this.state
+        const { t, i18n, currentUser } = this.props
         let formatedResultList = []
         results.map((result) => {
             formatedResultList.push({ 'title': result.name, 'description': result.description, 'image': result.imageUrl, 'id': result.id, 'createdOn': result.createdOn, 'candidates': result.candidates, 'voters': result.voters })
@@ -117,8 +120,8 @@ class AllCampaigns extends React.Component {
                         {
                             !isEmpty(this.state.user) &&
                             (<CampaignPreview
-                                key={dummyUser.id}
-                                campaigns={dummyUser.campaigns}
+                                key={user.id}
+                                campaigns={user.campaigns}
                             />)
                         }
                     </Grid.Row>
@@ -128,8 +131,8 @@ class AllCampaigns extends React.Component {
     }
 }
 
-const mapStateToProps = ({ users: { user } }) => ({
-    user
+const mapStateToProps = ({ users: { currentUser } }) => ({
+    currentUser
 })
 
 const ComposeAllCampaigns = compose(

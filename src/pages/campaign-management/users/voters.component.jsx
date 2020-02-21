@@ -51,7 +51,7 @@ class Voters extends React.Component {
                                 type='primary'
                                 onClick={() => this.handleClick()}
                             >
-                                <Icon type='cloud-upload' />
+                                <Icon type='download' />
                                 <span>Download</span>
                             </Button>
                         </div>

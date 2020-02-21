@@ -20,3 +20,8 @@ export const getCampaign = id => ({
     type: CampaignActionTypes.GET_CAMPAIGN,
     payload: id
 })
+
+export const goToPage = pageNumber => ({
+    type: CampaignActionTypes.GO_TO_PAGE,
+    payload: pageNumber
+})

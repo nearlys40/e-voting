@@ -41,10 +41,10 @@ const NvLogout = ({ history }) => {
     )
 }
 
-const NavLogout = () => {
+const NavLogout = (props) => {
     return (
         <Suspense fallback='loading'>
-            <NvLogout />
+            <NvLogout {...props}/>
         </Suspense>
     )
 }

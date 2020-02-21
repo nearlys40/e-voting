@@ -14,8 +14,3 @@ export const deleteCandidate = id => ({
     type: CandidateActionTypes.DELETE_CANDIDATE,
     payload: id
 })
-
-export const getCandidate = id => ({
-    type: CandidateActionTypes.GET_CANDIDATE,
-    payload: id
-})

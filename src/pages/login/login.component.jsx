@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import { userLoginFetch } from '../../redux/users/users.utils'
+import { userLoginFetch, getUserFetch } from '../../redux/users/users.utils'
 import { connect } from 'react-redux'
 import { compose } from 'compose-react'
 import './login-new.styles.scss'
@@ -91,7 +91,8 @@ class Login extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    userLoginFetch: (user, history) => dispatch(userLoginFetch(user, history))
+    userLoginFetch: (user, history) => dispatch(userLoginFetch(user, history)),
+    getUserFetch: (id) => dispatch(getUserFetch(id))
 })
 
 const ComposeLogin = compose(

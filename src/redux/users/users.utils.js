@@ -1,39 +1,31 @@
-import { loginUser, updateProfile } from './users.actions'
+import { loginUser, updateProfile, logoutUser, setCurrentUser } from './users.actions'
+import { authHeader } from '../../services/auth-header'
 import isEmpty from 'is-empty'
 import axios from 'axios'
 
 export const userSignUpFetch = (newUser, history) => {
     return dispatch => {
-        // axios.post('http://172.20.10.8:5000/user',
-        //     {
-        //         headers: {
-        //             'Access-Control-Allow-Origin': '*',
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: {
-        //             'req_type': 'create',
-        //             'credentials': [],
-        //             'email': newUser.email,
-        //             'username': newUser.username,
-        //             'password': newUser.password,
-        //             'extras': [],
-        //             'campaigns': []
-        //         }
-        //     })
-
-        //for local
         axios.post('http://localhost:3001/users',
             {
-                credentials: [],
-                email: newUser.email,
-                username: newUser.username,
-                password: newUser.password,
-                extras: [],
-                campaigns: []
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                    'Authorization': authHeader()
+                },
+                body: {
+                    credentials: [],
+                    email: newUser.email,
+                    username: newUser.username,
+                    password: newUser.password,
+                    extras: [],
+                    campaigns: []
+                }
             }
         )
             .then(res => {
                 if (res.status === 201) {
+                    localStorage.setItem('token', res.access_token)
+                    dispatch(setCurrentUser(res.data[0]))
                     history.push('/login')
                 } else {
                     throw Error(res.statusText);
@@ -44,26 +36,21 @@ export const userSignUpFetch = (newUser, history) => {
 
 export const userLoginFetch = (user, history) => {
     return dispatch => {
-        // axios.post('http://172.20.10.8:5000/user',
-        //     {
-        //         headers: {
-        //             'Access-Control-Allow-Origin': '*',
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: {
-        //             'req_type': 'login',
-        //             'username': user.username,
-        //             'password': user.password,
-        //         }
-        //     })
-
-        // for local
-        axios.get(`http://localhost:3001/users?username=${user.username}&&password=${user.password}`)
+        axios.get(`http://localhost:3001/users`, {
+            params: {
+                username: user.username,
+                password: user.password
+            }, 
+            headers: {
+                'Authorization': authHeader()
+            }
+        })
             .then(res => {
                 if (res.status === 200) {
                     if (isEmpty(res.data)) {
                         alert('Invalid username or password')
                     } else {
+                        localStorage.setItem('token', res.access_token)
                         dispatch(loginUser(res.data[0]))
                         history.push('/all-campaigns')
                     }
@@ -71,6 +58,34 @@ export const userLoginFetch = (user, history) => {
                     throw Error(res.statusText);
                 }
             }).catch(error => console.log(error.message))
+    }
+}
+
+export const userLogoutFetch = (history) => {
+    return dispatch => {
+        localStorage.removeItem('user')
+        dispatch(logoutUser())
+        history.push('/login')
+    }
+}
+
+export const getUserFetch = (id) => {
+    return dispatch => {
+        axios.get(`http://localhost:3001/users/`, {
+            params: {
+                id: id
+            }, 
+            headers: {
+                Authorization: authHeader()
+            }
+        })
+            .then(res => {
+                if (res.status === 200) {
+                    dispatch(setCurrentUser(res.data[0]))
+                } else {
+                    localStorage.removeItem('token')
+                }
+            })
     }
 }
 

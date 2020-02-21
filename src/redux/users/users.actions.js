@@ -1,12 +1,12 @@
 import { UserActionTypes } from './users.types'
 
-export const setCurrentUser = user => ({
-    type: UserActionTypes.SET_CURRENT_USER,
+export const updateProfile = user => ({
+    type: UserActionTypes.EDIT_USER_PROFILE,
     payload: user
 })
 
-export const updateProfile = user => ({
-    type: UserActionTypes.EDIT_USER_PROFILE,
+export const setCurrentUser = (user) => ({
+    type: UserActionTypes.SET_CURRENT_USER,
     payload: user
 })
 

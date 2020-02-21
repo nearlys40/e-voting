@@ -9,16 +9,16 @@ const candidateReducer = (state = INITIAL_STATE, action) => {
         case CandidateActionTypes.CREATE_CANDIDATE: 
             return {
                 //return new state
+                //POST
+                //baseUrl + 'create_candidate'
             }
         case CandidateActionTypes.EDIT_CANDIDATE:
             return {
                 //return new state
+                //PUT
+                //edit_candidate
             }
         case CandidateActionTypes.DELETE_CANDIDATE:
-            return {
-                //return new state
-            }
-        case CandidateActionTypes.GET_CANDIDATE:
             return {
                 //return new state
             }

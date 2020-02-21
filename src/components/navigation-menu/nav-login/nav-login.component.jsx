@@ -2,9 +2,9 @@ import React, { Suspense } from 'react'
 import { Icon } from 'antd'
 import './nav-login.styles.scss'
 import { Col } from 'antd'
+import { userLogoutFetch } from '../../../redux/users/users.utils'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { logoutUser } from '../../../redux/users/users.actions'
 import { withTranslation } from 'react-i18next'
 import { compose } from 'compose-react'
 
@@ -15,7 +15,7 @@ class NvLogin extends React.Component {
     }
 
     render() {
-        const { id, username, logoutUser, history, t } = this.props
+        const { id, username, userLogoutFetch, history, t } = this.props
 
         return (
             <Col className='navigation-menu' span={12}>
@@ -28,7 +28,7 @@ class NvLogin extends React.Component {
                     <div className='logout-container'>
                         <span
                             className='logout-button'
-                            onClick={() => logoutUser()}
+                            onClick={() => userLogoutFetch(history)}
                         >{t('logout').toUpperCase()}</span>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ class NvLogin extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    logoutUser: () => dispatch(logoutUser())
+    userLogoutFetch: (history) => dispatch(userLogoutFetch(history))
 })
 
 const ComposeNavLogin = compose(

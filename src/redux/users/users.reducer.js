@@ -2,37 +2,34 @@ import { UserActionTypes } from './users.types'
 import isEmpty from 'is-empty'
 
 const INITIAL_STATE = {
-    user: null,
-    isAuthenticated: false,
+    currentUser: {},
+    isAuth: false,
     loading: false
 }
 
 const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case UserActionTypes.SET_CURRENT_USER:
-            return {
-                ...state,
-                user: action.payload
-            }
         case UserActionTypes.LOGIN_USER:
             return {
                 ...state,
-                isAuthenticated: !isEmpty(action.payload),
-                user: action.payload
+                isAuth: !isEmpty(action.payload),
+                currentUser: action.payload
             }
         case UserActionTypes.LOGOUT_USER:
-            return {
-                ...state,
-                isAuthenticated: false
-            }
+            return {}
         case UserActionTypes.UPDATE_PROFILE:
             return {
                 ...state,
-                user: action.payload
+                currentUser: action.payload
             }
         case UserActionTypes.USER_LOADING:
             return {
                 loading: true
+            }
+        case UserActionTypes.SET_CURRENT_USER:
+            return {
+                ...state,
+                currentUser: action.payload
             }
         default:
             return state

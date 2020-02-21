@@ -7,6 +7,7 @@ import { Grid, Button, Container, Divider } from 'semantic-ui-react'
 import SmallBox from '../../../components/small-box/small-box.component'
 import CampaignStatusBar from '../../../components/campaign-status-bar/campaign-status-bar'
 import './campaign.styles.scss'
+import { isImageUrl } from 'antd/lib/upload/utils'
 
 const initialStatus = 'NOT OPEN'
 
@@ -25,27 +26,31 @@ const getStatusByTime = (openTime, closeTime) => {
     const start = setDateTime(new Date(current), openTime)
     const end = setDateTime(new Date(current), closeTime)
 
-    if (c < start.getTime())
-        return 'NOT OPEN'
-    else if (start.getTime() <= c && c <= end.getTime())
+    if (start.getTime() <= c && c <= end.getTime())
         return 'OPEN'
-    else if (end.getTime() > c)
+    else if (end.getTime() < c)
         return 'END'
+    else
+        return 'NOT OPEN'
 }
 
 const Campaign = ({ attendee = 75,
     notAttend = 25,
     status = initialStatus,
     openT = '10-01-20  12:00 AM', //need format HH:mm:SS
-    closeT = '12-01-20  17:00 PM' //need format HH:mm:SS
+    closeT = '12-01-20  17:00 PM', //need format HH:mm:SS
+    imageUrl,
+    description,
+    candidates,
+    voters
 }) => {
     let allVoters = attendee + notAttend
     let attendPercent = attendee / allVoters
     let notAttendPercent = notAttend / allVoters
     let timeRemaining = '00 H : 30 M : 20 S' //need format HH:mm:SS
 
-    let dummyOpenTime = '15:00:00'
-    let dummyCloseTime = '19:00:00'
+    let dummyOpenTime = '22:00:00'
+    let dummyCloseTime = '18:00:00'
     status = getStatusByTime(dummyOpenTime, dummyCloseTime)
 
     let content
@@ -54,8 +59,12 @@ const Campaign = ({ attendee = 75,
         content = <CampaignOpen />
     } else if (status === 'END') {
         content = <CampaignEnd />
-    } else if (status === 'NOT OPEN') {
-        content = <CampaignNotOpen />
+    } else {
+        content = <CampaignNotOpen
+                    imageUrl={imageUrl}
+                    description={description}
+                    candidates={candidates}
+                    voters={voters} />
     }   
 
     return (
@@ -70,7 +79,7 @@ const Campaign = ({ attendee = 75,
                             <Grid.Column width={4}>
                                 <Button color='google plus'>
                                     CLOSING BALLOT
-                        </Button>
+                                </Button>
                             </Grid.Column>
                         </Grid>
                     </Grid.Row>
@@ -78,7 +87,7 @@ const Campaign = ({ attendee = 75,
                 <Grid.Row style={{ height: 'auto' }}>
                     <CampaignStatusBar cStatus={status} cOpeningT={openT} cCloseT={closeT} />
                 </Grid.Row>
-                <Grid.Row style={{ paddingLeft: '100px' }} >
+                <Grid.Row style={{ padding: '20px 20px 20px 40px' }}>
                     { content }
                 </Grid.Row>
             </Grid>

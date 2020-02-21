@@ -1,0 +1,12 @@
+.candidates-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.candidates-data {
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    padding: 16px 16px 0px 16px;
+}
