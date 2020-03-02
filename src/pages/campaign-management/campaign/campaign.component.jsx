@@ -49,8 +49,8 @@ const Campaign = ({ attendee = 75,
     let notAttendPercent = notAttend / allVoters
     let timeRemaining = '00 H : 30 M : 20 S' //need format HH:mm:SS
 
-    let dummyOpenTime = '00:00:00'
-    let dummyCloseTime = '00:00:00'
+    let dummyOpenTime = '17:00:00'
+    let dummyCloseTime = '20:00:00'
     status = getStatusByTime(dummyOpenTime, dummyCloseTime)
 
     let content

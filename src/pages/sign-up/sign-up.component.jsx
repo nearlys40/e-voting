@@ -36,6 +36,12 @@ class SignUp extends React.Component {
         }
     }
 
+    // static getDerivedStateFromProps(nextProps, prevState) {
+    //     if(nextProps.isAuth) {
+    //         this.props.history.push('/all-campaigns')
+    //     }
+    // }
+
     render() {
         const { t, i18n } = this.props
 
@@ -124,13 +130,17 @@ class SignUp extends React.Component {
     }
 }
 
+const mapStateToProps = ({ users: isAuth }) => ({
+    isAuth
+})
+
 const mapDispatchToProps = dispatch => ({
     userSignUpFetch: (user, history) => dispatch(userSignUpFetch(user, history))
 })
 
 const ComposeSignUp = compose(
     withRouter,
-    connect(null, mapDispatchToProps),
+    connect(mapStateToProps, mapDispatchToProps),
     withTranslation()
 )(SignUp)
 

@@ -31,6 +31,12 @@ class Login extends React.Component {
             password: ''
         })
     }
+    
+    // static getDerivedStateFromProps(nextProps, prevState) {
+    //     if(nextProps.isAuth) {
+    //         nextProps.history.push('/all-campaigns')
+    //     }
+    // }
 
     render() {
         const { t, i18n } = this.props
@@ -90,13 +96,17 @@ class Login extends React.Component {
     }
 }
 
+const mapStateToProps = ({ users : isAuth }) => ({
+    isAuth
+})
+
 const mapDispatchToProps = dispatch => ({
     userLoginFetch: (user, history) => dispatch(userLoginFetch(user, history)),
     getUserFetch: (id) => dispatch(getUserFetch(id))
 })
 
 const ComposeLogin = compose(
-    connect(null, mapDispatchToProps),
+    connect(mapStateToProps, mapDispatchToProps),
     withRouter,
     withTranslation()
 )(Login)

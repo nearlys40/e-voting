@@ -8,9 +8,7 @@ export const userSignUpFetch = (newUser, history) => {
         axios.post('http://localhost:3001/users',
             {
                 headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                    'Authorization': authHeader()
+                    'Content-Type': 'application/json'
                 },
                 body: {
                     credentials: [],
@@ -24,8 +22,6 @@ export const userSignUpFetch = (newUser, history) => {
         )
             .then(res => {
                 if (res.status === 201) {
-                    localStorage.setItem('token', res.access_token)
-                    dispatch(setCurrentUser(res.data[0]))
                     history.push('/login')
                 } else {
                     throw Error(res.statusText);
@@ -42,7 +38,7 @@ export const userLoginFetch = (user, history) => {
                 password: user.password
             }, 
             headers: {
-                'Authorization': authHeader()
+                'Content-Type': 'application/json'
             }
         })
             .then(res => {
@@ -50,10 +46,10 @@ export const userLoginFetch = (user, history) => {
                     if (isEmpty(res.data)) {
                         alert('Invalid username or password')
                     } else {
-                        localStorage.setItem('token', res.access_token)
+                        localStorage.setItem('user', res.data[0])
                         dispatch(loginUser(res.data[0]))
                         history.push('/all-campaigns')
-                    }
+                    }   
                 } else {
                     throw Error(res.statusText);
                 }

@@ -19,13 +19,13 @@ class AllCampaigns extends React.Component {
             isLoading: false,
             results: [],
             value: '',
-            user: null
+            user: CAMPAIGNS_MOCKUP_DATA[0]
         }
     }
 
-    componentDidMount() {
-        this.setState({ user: this.props.currentUser }, () => console.log(this.state.user))
-    }
+    // componentDidMount() {
+    //     this.setState({ user: this.props.currentUser }, () => console.log(this.state.user))
+    // }
 
     handleResultSelect = (e, { result }) => {
         console.log(result, 'pp')
